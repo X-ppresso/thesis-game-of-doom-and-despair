@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cy10lxvoa4dqh"]
+
+[ext_resource type="Script" uid="uid://d3cmhtd76hr48" path="res://Scripts/gym.gd" id="1_ei0x5"]
+[ext_resource type="Texture2D" uid="uid://dyvey27wepa5r" path="res://asset TA/pc_bad.png" id="2_ufjhq"]
+[ext_resource type="Texture2D" uid="uid://bjti0u316qaf6" path="res://icon.svg" id="3_stjpo"]
+
+[node name="Gym" type="Node2D" unique_id=552552647]
+script = ExtResource("1_ei0x5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=121474898]
+offset_right = 640.0
+offset_bottom = 328.0
+scale = Vector2(1.0024136, 0.9970297)
+texture = ExtResource("2_ufjhq")
+
+[node name="Button" type="Button" parent="." unique_id=1648341662]
+offset_left = 21.0
+offset_top = 37.0
+offset_right = 157.0
+offset_bottom = 173.0
+icon = ExtResource("3_stjpo")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
