@@ -1,0 +1,7 @@
+join Random1 center
+Random1: What to test?
+- Speed
+	Random1: [ns=0.1]This is a text[lspeed=0.5] . . .
+	Random1: [speed=1][font_size=18]speed test.
+- punctuations
+	Random1: Halt![pause=0.5] state thy name.

@@ -7,14 +7,7 @@
 script = ExtResource("1_ei0x5")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=121474898]
-offset_right = 640.0
-offset_bottom = 320.0
+offset_right = 1280.0
+offset_bottom = 720.0
 scale = Vector2(1.0024136, 0.9970297)
 texture = ExtResource("2_ei0x5")
-
-[node name="Button" type="Button" parent="." unique_id=1648341662]
-offset_right = 34.0
-offset_bottom = 31.0
-text = "sus"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

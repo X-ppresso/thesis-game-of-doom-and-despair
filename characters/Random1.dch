@@ -7,23 +7,23 @@
 "prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "",
+"style": "bwuh",
 "suffix": ""
 },
-&"default_portrait": "New portrait",
+&"default_portrait": "yee",
 &"description": "literally just a test",
 &"display_name": "Random 1",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"New portrait": {
+"yee": {
 "export_overrides": {
 "image": "\"res://asset TA/stikman_bad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.8,
 "scene": ""
 }
 },

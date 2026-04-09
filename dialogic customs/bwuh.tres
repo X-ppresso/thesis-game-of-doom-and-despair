@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="DialogicStyle" format=3 uid="uid://c4pyirxwk5av4"]
+
+[ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="1_60hom"]
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_al53v"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="3_s5dha"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="4_j83ym"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="5_f04gp"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="6_ynetr"]
+[ext_resource type="PackedScene" uid="uid://cuij8w330plyc" path="res://dialogic customs/CenteredChoices/custom_centered_choices.tscn" id="8_60hom"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_t6nq4"]
+
+[sub_resource type="Resource" id="Resource_xpg2q"]
+script = ExtResource("2_al53v")
+scene = ExtResource("1_60hom")
+overrides = {
+"global_bg_color": "Color(1, 1, 1, 1)",
+"global_font_size": "24.0"
+}
+
+[sub_resource type="Resource" id="Resource_lanlp"]
+script = ExtResource("2_al53v")
+scene = ExtResource("3_s5dha")
+
+[sub_resource type="Resource" id="Resource_pv0vm"]
+script = ExtResource("2_al53v")
+scene = ExtResource("4_j83ym")
+
+[sub_resource type="Resource" id="Resource_ntelk"]
+script = ExtResource("2_al53v")
+scene = ExtResource("5_f04gp")
+
+[sub_resource type="Resource" id="Resource_1tf0u"]
+script = ExtResource("2_al53v")
+scene = ExtResource("6_ynetr")
+overrides = {
+"autoadvance_progressbar": "false",
+"bold_font": "\"res://fonts/Abaddon Bold.ttf\"",
+"box_animation_in": "0",
+"box_panel": "\"res://dialogic customs/style_box_texture.tres\"",
+"box_size": "Vector2(608, 128)",
+"name_label_box_offset": "Vector2(10000, 0)",
+"next_indicator_texture": "\"res://icon.svg\"",
+"normal_font": "\"res://fonts/Abaddon Light.ttf\""
+}
+
+[sub_resource type="Resource" id="Resource_6hkbc"]
+script = ExtResource("2_al53v")
+scene = ExtResource("8_60hom")
+overrides = {
+"font_custom": "\"res://fonts/Abaddon Bold.ttf\"",
+"font_size_custom": "24.0",
+"font_size_use_global": "false",
+"font_use_global": "false"
+}
+
+[resource]
+script = ExtResource("11_t6nq4")
+name = "bwuh"
+layer_list = Array[String](["10", "11", "12", "13", "15"])
+layer_info = {
+"": SubResource("Resource_xpg2q"),
+"10": SubResource("Resource_lanlp"),
+"11": SubResource("Resource_pv0vm"),
+"12": SubResource("Resource_ntelk"),
+"13": SubResource("Resource_1tf0u"),
+"15": SubResource("Resource_6hkbc")
+}
+metadata/_latest_layer = "15"

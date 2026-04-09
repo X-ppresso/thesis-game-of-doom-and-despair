@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+Global="*uid://dir52ptkx0tmr"
 
 [dialogic]
 
@@ -25,18 +26,19 @@ directories/dch_directory={
 "Random1": "res://characters/Random1.dch"
 }
 directories/dtl_directory={
-"huh": "res://timeline/huh.dtl"
+"highschooler_week1": "res://timeline/highschooler_week1.dtl",
+"huh": "res://timeline/test.dtl"
 }
 layout/style_directory={
-"": "res://dialogic styles/bwuh.tres",
-"bwuh": "res://dialogic styles/bwuh.tres"
+"bwuh": "res://dialogic customs/bwuh.tres",
+"no_portrait": "res://dialogic customs/no_portrait.tres"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://dialogic styles/bwuh.tres"]
+layout/style_list=["res://dialogic customs/bwuh.tres", "res://dialogic customs/no_portrait.tres"]
 layout/default_style="res://dialogic styles/bwuh.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.01
+text/letter_speed=0.03
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
@@ -68,11 +70,15 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
+text/autocolor_names=false
+text/autoadvance_fixed_delay=0.5
+text/autoadvance_enabled=false
+text/absolute_autopauses=true
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=320
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/mode=2
 window/size/resizable=false
 window/size/window_width_override=1920
@@ -88,7 +94,8 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 folder_colors={
 "res://Scenes/": "red",
 "res://Scripts/": "orange",
-"res://Shaders/": "yellow"
+"res://Shaders/": "yellow",
+"res://dialogic customs/": "purple"
 }
 
 [input]
