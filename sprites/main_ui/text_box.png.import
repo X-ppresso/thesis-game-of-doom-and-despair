@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnymwxcg7k1hn"
-path="res://.godot/imported/text_box_no_portrait.png-5cdd85edbbc84932ff0cd68a0334a627.ctex"
+uid="uid://gdj0pog1c53g"
+path="res://.godot/imported/text_box.png-6949d37bf6da6d8fba80cc9a67f6a1f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset TA/text_box_no_portrait.png"
-dest_files=["res://.godot/imported/text_box_no_portrait.png-5cdd85edbbc84932ff0cd68a0334a627.ctex"]
+source_file="res://asset TA/main_ui/text_box.png"
+dest_files=["res://.godot/imported/text_box.png-6949d37bf6da6d8fba80cc9a67f6a1f4.ctex"]
 
 [params]
 
