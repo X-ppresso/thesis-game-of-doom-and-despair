@@ -1,0 +1,3 @@
+refer to the images in preview folder for layout.
+
+some exported images will be gray on purpose, so the color can be added and adjusted easily later in godot with modulation.

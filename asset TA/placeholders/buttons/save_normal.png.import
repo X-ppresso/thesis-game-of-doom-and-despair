@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c81e6a8dbhsft"
-path="res://.godot/imported/save_normal.png-424cc04eeb6b24787b3a7efe3b7987b0.ctex"
+path="res://.godot/imported/save_normal.png-715fa7b3d079250c61018d6b826331c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset TA/placeholders/save_normal.png"
-dest_files=["res://.godot/imported/save_normal.png-424cc04eeb6b24787b3a7efe3b7987b0.ctex"]
+source_file="res://asset TA/placeholders/buttons/save_normal.png"
+dest_files=["res://.godot/imported/save_normal.png-715fa7b3d079250c61018d6b826331c9.ctex"]
 
 [params]
 

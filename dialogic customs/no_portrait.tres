@@ -44,6 +44,10 @@ overrides = {
 "normal_font": "\"res://fonts/Abaddon Light.ttf\""
 }
 
+[sub_resource type="Resource" id="Resource_vg2kf"]
+script = ExtResource("2_3g3bx")
+scene = ExtResource("8_3g3bx")
+
 [sub_resource type="Resource" id="Resource_b416w"]
 script = ExtResource("2_3g3bx")
 scene = ExtResource("7_d8y1n")
@@ -54,10 +58,6 @@ overrides = {
 "font_use_global": "false",
 "sounds_hover": "\"\""
 }
-
-[sub_resource type="Resource" id="Resource_vg2kf"]
-script = ExtResource("2_3g3bx")
-scene = ExtResource("8_3g3bx")
 
 [sub_resource type="Resource" id="Resource_3g3bx"]
 script = ExtResource("2_3g3bx")

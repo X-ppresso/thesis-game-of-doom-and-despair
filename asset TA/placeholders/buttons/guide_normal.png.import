@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmdwwkfrey6px"
-path="res://.godot/imported/guide_normal.png-a5d570c8e22d2304355f68e7c5fdacef.ctex"
+path="res://.godot/imported/guide_normal.png-a07548931faae798a3ec33612b8bb97b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset TA/placeholders/guide_normal.png"
-dest_files=["res://.godot/imported/guide_normal.png-a5d570c8e22d2304355f68e7c5fdacef.ctex"]
+source_file="res://asset TA/placeholders/buttons/guide_normal.png"
+dest_files=["res://.godot/imported/guide_normal.png-a07548931faae798a3ec33612b8bb97b.ctex"]
 
 [params]
 
