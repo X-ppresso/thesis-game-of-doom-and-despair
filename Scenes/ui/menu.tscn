@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://ce8tpm5k3fwxo"]
 
 [ext_resource type="Script" uid="uid://bubanby4psinw" path="res://Scripts/menu.gd" id="1_7anfk"]
-[ext_resource type="Texture2D" uid="uid://cg5ha6i0uy2e3" path="res://asset TA/menu.png" id="2_7anfk"]
+[ext_resource type="Texture2D" uid="uid://b7ijgganfny53" path="res://asset TA/menu_main.png" id="2_6revv"]
 [ext_resource type="Texture2D" uid="uid://bjti0u316qaf6" path="res://icon.svg" id="3_fcbmw"]
-[ext_resource type="Texture2D" uid="uid://bwvdkanloscsm" path="res://asset TA/placeholders/play_normal.png" id="4_6revv"]
-[ext_resource type="Texture2D" uid="uid://tic0t5atqoxy" path="res://asset TA/placeholders/play_pressed.png" id="5_ukdyq"]
-[ext_resource type="Texture2D" uid="uid://bjm7sr0uwumjv" path="res://asset TA/placeholders/continue_normal.png" id="6_xtfuj"]
-[ext_resource type="Texture2D" uid="uid://ce4dmtwnqdeju" path="res://asset TA/placeholders/continue_pressed.png" id="7_te4rr"]
-[ext_resource type="Texture2D" uid="uid://bvk6rj8lkoegc" path="res://asset TA/placeholders/settings_normal.png" id="8_jsy82"]
-[ext_resource type="Texture2D" uid="uid://cm4uekavwt86m" path="res://asset TA/placeholders/settings_pressed.png" id="9_w1aet"]
-[ext_resource type="Texture2D" uid="uid://drm2sl6qtfarg" path="res://asset TA/placeholders/quit_normal.png" id="10_ckgtd"]
-[ext_resource type="Texture2D" uid="uid://mf1aj2iwd5l1" path="res://asset TA/placeholders/quit_pressed.png" id="11_krmfv"]
+[ext_resource type="Texture2D" uid="uid://bwvdkanloscsm" path="res://asset TA/placeholders/buttons/play_normal.png" id="4_6revv"]
+[ext_resource type="Texture2D" uid="uid://tic0t5atqoxy" path="res://asset TA/placeholders/buttons/play_pressed.png" id="5_ukdyq"]
+[ext_resource type="Texture2D" uid="uid://bjm7sr0uwumjv" path="res://asset TA/placeholders/buttons/continue_normal.png" id="6_xtfuj"]
+[ext_resource type="Texture2D" uid="uid://ce4dmtwnqdeju" path="res://asset TA/placeholders/buttons/continue_pressed.png" id="7_te4rr"]
+[ext_resource type="Texture2D" uid="uid://bvk6rj8lkoegc" path="res://asset TA/placeholders/buttons/settings_normal.png" id="8_jsy82"]
+[ext_resource type="Texture2D" uid="uid://cm4uekavwt86m" path="res://asset TA/placeholders/buttons/settings_pressed.png" id="9_w1aet"]
+[ext_resource type="Texture2D" uid="uid://drm2sl6qtfarg" path="res://asset TA/placeholders/buttons/quit_normal.png" id="10_ckgtd"]
+[ext_resource type="Texture2D" uid="uid://mf1aj2iwd5l1" path="res://asset TA/placeholders/buttons/quit_pressed.png" id="11_krmfv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xulg5"]
-texture = ExtResource("2_7anfk")
+texture = ExtResource("2_6revv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2jn2a"]
 texture = ExtResource("3_fcbmw")
@@ -29,8 +29,9 @@ script = ExtResource("1_7anfk")
 
 [node name="background" type="Panel" parent="." unique_id=1667310794]
 layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_right = 640.0
+offset_bottom = 360.0
+scale = Vector2(2, 2)
 theme_override_styles/panel = SubResource("StyleBoxTexture_xulg5")
 
 [node name="logo" type="Panel" parent="." unique_id=2042453445]
