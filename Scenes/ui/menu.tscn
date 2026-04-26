@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bubanby4psinw" path="res://Scripts/menu.gd" id="1_7anfk"]
 [ext_resource type="Texture2D" uid="uid://b7ijgganfny53" path="res://asset TA/menu_main.png" id="2_6revv"]
-[ext_resource type="Texture2D" uid="uid://bjti0u316qaf6" path="res://icon.svg" id="3_fcbmw"]
+[ext_resource type="Texture2D" uid="uid://d1l0kp5qdv0om" path="res://sprites/main_ui/logo fr.png" id="3_6revv"]
 [ext_resource type="Texture2D" uid="uid://bwvdkanloscsm" path="res://asset TA/placeholders/buttons/play_normal.png" id="4_6revv"]
 [ext_resource type="Texture2D" uid="uid://tic0t5atqoxy" path="res://asset TA/placeholders/buttons/play_pressed.png" id="5_ukdyq"]
 [ext_resource type="Texture2D" uid="uid://bjm7sr0uwumjv" path="res://asset TA/placeholders/buttons/continue_normal.png" id="6_xtfuj"]
@@ -16,7 +16,7 @@
 texture = ExtResource("2_6revv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2jn2a"]
-texture = ExtResource("3_fcbmw")
+texture = ExtResource("3_6revv")
 
 [node name="Menu" type="Control" unique_id=1373726558]
 layout_mode = 3
@@ -36,16 +36,19 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_xulg5")
 
 [node name="logo" type="Panel" parent="." unique_id=2042453445]
 layout_mode = 0
-offset_left = 189.0
-offset_top = 20.0
-offset_right = 385.0
-offset_bottom = 52.0
+offset_left = 666.0
+offset_top = 86.0
+offset_right = 946.0
+offset_bottom = 150.0
+scale = Vector2(2, 2)
 theme_override_styles/panel = SubResource("StyleBoxTexture_2jn2a")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2122388409]
 layout_mode = 0
-offset_right = 136.0
-offset_bottom = 220.0
+offset_left = 400.0
+offset_top = 300.0
+offset_right = 536.0
+offset_bottom = 520.0005
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2087790590]
 layout_mode = 2
