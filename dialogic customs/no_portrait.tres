@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="5_4srdb"]
 [ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="6_oimam"]
 [ext_resource type="PackedScene" uid="uid://cuij8w330plyc" path="res://dialogic customs/CenteredChoices/custom_centered_choices.tscn" id="7_d8y1n"]
-[ext_resource type="PackedScene" uid="uid://by6waso0mjpjp" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/textbox_with_speaker_portrait.tscn" id="8_3g3bx"]
 [ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="8_oxilj"]
 
 [sub_resource type="Resource" id="Resource_yi4mi"]
@@ -37,16 +36,15 @@ overrides = {
 "autoadvance_progressbar": "false",
 "bold_font": "\"res://fonts/Abaddon Bold.ttf\"",
 "box_animation_in": "0",
+"box_color_custom": "Color(0.8509804, 0.54901963, 0.3019608, 1)",
+"box_color_use_global": "false",
+"box_margin_bottom": "30.0",
 "box_panel": "\"res://dialogic customs/no_portrait_box.tres\"",
-"box_size": "Vector2(608, 128)",
+"box_size": "Vector2(720, 140)",
 "name_label_box_offset": "Vector2(10000, 0)",
 "next_indicator_texture": "\"res://icon.svg\"",
 "normal_font": "\"res://fonts/Abaddon Light.ttf\""
 }
-
-[sub_resource type="Resource" id="Resource_vg2kf"]
-script = ExtResource("2_3g3bx")
-scene = ExtResource("8_3g3bx")
 
 [sub_resource type="Resource" id="Resource_b416w"]
 script = ExtResource("2_3g3bx")
@@ -59,22 +57,16 @@ overrides = {
 "sounds_hover": "\"\""
 }
 
-[sub_resource type="Resource" id="Resource_3g3bx"]
-script = ExtResource("2_3g3bx")
-scene = ExtResource("8_3g3bx")
-
 [resource]
 script = ExtResource("8_oxilj")
 name = "no_portrait"
-layer_list = Array[String](["10", "11", "12", "13", "15", "14", "16"])
+layer_list = Array[String](["10", "11", "12", "13", "15"])
 layer_info = {
 "": SubResource("Resource_yi4mi"),
 "10": SubResource("Resource_6y7wo"),
 "11": SubResource("Resource_hvovw"),
 "12": SubResource("Resource_p2kto"),
 "13": SubResource("Resource_7xdyg"),
-"14": SubResource("Resource_vg2kf"),
-"15": SubResource("Resource_b416w"),
-"16": SubResource("Resource_3g3bx")
+"15": SubResource("Resource_b416w")
 }
-metadata/_latest_layer = "15"
+metadata/_latest_layer = "13"

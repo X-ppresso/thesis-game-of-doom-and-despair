@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="1_60hom"]
 [ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_al53v"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="3_s5dha"]
+[ext_resource type="PackedScene" uid="uid://e5vttkf4hktt" path="res://dialogic customs/bwuh/TextboxWithPortrait/custom_textbox_with_portrait_.tscn" id="5_1cknc"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="5_f04gp"]
-[ext_resource type="PackedScene" uid="uid://by6waso0mjpjp" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/textbox_with_speaker_portrait.tscn" id="6_spkbox"]
 [ext_resource type="PackedScene" uid="uid://cuij8w330plyc" path="res://dialogic customs/CenteredChoices/custom_centered_choices.tscn" id="8_60hom"]
 [ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_t6nq4"]
 
@@ -26,19 +26,19 @@ scene = ExtResource("5_f04gp")
 
 [sub_resource type="Resource" id="Resource_textbox"]
 script = ExtResource("2_al53v")
-scene = ExtResource("6_spkbox")
+scene = ExtResource("5_1cknc")
 overrides = {
-"box_modulate_global_color": "false",
+"box_distance": "30",
 "box_modulate_custom_color": "Color(0.85, 0.55, 0.3, 1)",
+"box_modulate_global_color": "false",
 "box_panel": "\"res://dialogic customs/no_portrait_box.tres\"",
 "box_size": "Vector2(720, 140)",
-"box_distance": "30",
+"name_label_hide_when_no_character": "true",
+"portrait_bg_modulate": "Color(0.95, 0.93, 0.7, 1)",
 "portrait_position": "0",
 "portrait_stretch_factor": "0.22",
-"portrait_bg_modulate": "Color(0.95, 0.93, 0.7, 1)",
-"text_use_global_size": "false",
 "text_custom_size": "22",
-"name_label_hide_when_no_character": "true"
+"text_use_global_size": "false"
 }
 
 [sub_resource type="Resource" id="Resource_6hkbc"]
@@ -62,4 +62,4 @@ layer_info = {
 "13": SubResource("Resource_textbox"),
 "15": SubResource("Resource_6hkbc")
 }
-metadata/_latest_layer = "15"
+metadata/_latest_layer = "13"

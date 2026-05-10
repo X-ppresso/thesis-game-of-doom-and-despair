@@ -17,22 +17,13 @@
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"neutral": {
+"frown": {
 "export_overrides": {
-"image": "\"res://sprites/character portraits/mc/face_mc_neutral.png\""
+"image": "\"res://sprites/character portraits/mc/face_mc_frown.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 4.0,
-"scene": ""
-},
-"smile": {
-"export_overrides": {
-"image": "\"res://sprites/character portraits/mc/face_mc_smile.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 4.0,
+"scale": 3.0,
 "scene": ""
 },
 "happy": {
@@ -41,16 +32,16 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 4.0,
+"scale": 3.0,
 "scene": ""
 },
-"frown": {
+"neutral": {
 "export_overrides": {
-"image": "\"res://sprites/character portraits/mc/face_mc_frown.png\""
+"image": "\"res://sprites/character portraits/mc/face_mc_neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 4.0,
+"scale": 2.5,
 "scene": ""
 },
 "shock": {
@@ -59,7 +50,16 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 4.0,
+"scale": 3.0,
+"scene": ""
+},
+"smile": {
+"export_overrides": {
+"image": "\"res://sprites/character portraits/mc/face_mc_smile.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 3.0,
 "scene": ""
 }
 },

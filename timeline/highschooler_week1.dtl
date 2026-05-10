@@ -1,17 +1,22 @@
 [style name="bwuh"]
-MC: ......
+MC (neutral): ......
 MC: (Today's another slow day, huh?)
 MC: (Well, can't expect customers to come rushing in within the first week.)
 MC: (....)
 MC: (The weather... is nice today...) [pause=0.4]zzz...
-HG: AAAAAAAAH I'M SO SCREWED!!!
+[style name="no_portrait"]
+AAAAAAAAH I'M SO SCREWED!!!
+[style name="bwuh"]
 MC: (...?)
-HG: HUH? WHEN DID WE HAVE A REPAIR SHOP HERE?
+[style name="no_portrait"]
+HUH? WHEN DID WE HAVE A REPAIR SHOP HERE?
+[style name="bwuh"]
 MC: (What's that noise?)
-MC: ...[pause=0.3][b]Door opens loudly.[/b]
-join HG center neutral
+[style name="no_portrait"]
+...[pause=0.3][b]Door opens loudly.[/b]
+[style name="bwuh"]
 HG: HELLO!!! I NEED YOU!
-MC: HUH?! HI, WHAAaaat can I help you with?
+MC (shock): HUH?! HI, WHAAaaat can I help you with?
 HG: My phone! It's broken!
 HG: You can repair it, right?
 MC: Calm down, please. Let me take a look..
