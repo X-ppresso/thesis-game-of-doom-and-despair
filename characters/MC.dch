@@ -23,7 +23,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 3.0,
+"scale": 2.5,
 "scene": ""
 },
 "happy": {
@@ -32,12 +32,21 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 3.0,
+"scale": 2.5,
 "scene": ""
 },
 "neutral": {
 "export_overrides": {
 "image": "\"res://sprites/character portraits/mc/face_mc_neutral.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 2.5,
+"scene": ""
+},
+"neutral_closed": {
+"export_overrides": {
+"image": "\"res://sprites/character portraits/mc/face_mc_neutral_closed1.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -50,7 +59,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 3.0,
+"scale": 2.5,
 "scene": ""
 },
 "smile": {
@@ -59,7 +68,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 3.0,
+"scale": 2.5,
 "scene": ""
 }
 },

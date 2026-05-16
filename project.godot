@@ -53,11 +53,11 @@ choices/reveal_delay=0
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
-animations/join_default_length=0.5
+animations/join_default_length=0.0
 animations/join_default_wait=true
-animations/leave_default_length=0.5
+animations/leave_default_length=0.0
 animations/leave_default_wait=true
-animations/cross_fade_default_length=0.5
+animations/cross_fade_default_length=0.0
 text/autopauses={}
 audio/channel_defaults={
 "": {
@@ -77,6 +77,9 @@ text/autocolor_names=false
 text/autoadvance_fixed_delay=0.5
 text/autoadvance_enabled=false
 text/absolute_autopauses=true
+animations/join_default="Instant In"
+animations/leave_default="Instant Out"
+animations/cross_fade_default="Fade Cross"
 
 [display]
 

@@ -23,13 +23,14 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 3.0,
+"scale": 2.5,
 "scene": ""
 },
 "neutral": {
 "export_overrides": {
 "image": "\"res://sprites/character portraits/highschool_girl/face_hsgirl_neutral.png\""
 },
+"ignore_char_scale": false,
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 2.5,
@@ -41,7 +42,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 3.0,
+"scale": 2.5,
 "scene": ""
 },
 "shock": {
@@ -50,7 +51,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 2.0,
+"scale": 2.5,
 "scene": ""
 }
 },
