@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://1nn1s08xx7kf"]
+
+[ext_resource type="Texture2D" uid="uid://yfdfnjxwtulo" path="res://sprites/main_ui/gameplay/background.png" id="1_45q1e"]
+[ext_resource type="Script" uid="uid://cjs8ify76mba1" path="res://Scenes/stage/day_1.gd" id="1_r2dlb"]
+[ext_resource type="PackedScene" uid="uid://coinjd5byry8i" path="res://Scenes/Characters/mc.tscn" id="2_bwpxn"]
+[ext_resource type="PackedScene" uid="uid://s2e1lryxdn4h" path="res://Scenes/Characters/hg1.tscn" id="3_tap13"]
+[ext_resource type="Texture2D" uid="uid://ck4021sb4ij4a" path="res://sprites/main_ui/gameplay/devices/phone.png" id="4_u0our"]
+[ext_resource type="Texture2D" uid="uid://bwqf7c3lgly6m" path="res://sprites/main_ui/gameplay/devices/laptop.png" id="5_focst"]
+
+[node name="Day1" type="Node2D" unique_id=786317998]
+script = ExtResource("1_r2dlb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1795160056]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_45q1e")
+
+[node name="MC" parent="." unique_id=539553132 instance=ExtResource("2_bwpxn")]
+position = Vector2(1209.0001, 419.00003)
+scale = Vector2(6, 6)
+
+[node name="HG1" parent="." unique_id=534125666 instance=ExtResource("3_tap13")]
+position = Vector2(999, 416)
+scale = Vector2(6, 6)
+
+[node name="phone" type="TextureRect" parent="." unique_id=444338929]
+visible = false
+offset_left = 202.0
+offset_top = 42.0
+offset_right = 375.0
+offset_bottom = 363.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_u0our")
+
+[node name="laptop" type="TextureRect" parent="." unique_id=740456532]
+visible = false
+offset_left = 1.0
+offset_top = 9.0
+offset_right = 482.0
+offset_bottom = 352.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_focst")
