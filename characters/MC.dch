@@ -12,7 +12,7 @@
 },
 &"default_portrait": "neutral",
 &"description": "The player character. A nerd running a tech repair shop.",
-&"display_name": "MC",
+&"display_name": "",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),

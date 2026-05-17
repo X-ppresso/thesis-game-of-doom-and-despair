@@ -47,9 +47,9 @@ text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
 text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
-choices/autofocus_first=true
+choices/autofocus_first=false
 choices/delay=0.2
-choices/reveal_delay=0
+choices/reveal_delay=0.1
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
@@ -101,7 +101,8 @@ folder_colors={
 "res://Scenes/": "red",
 "res://Scripts/": "orange",
 "res://Shaders/": "yellow",
-"res://dialogic customs/": "purple"
+"res://dialogic customs/": "purple",
+"res://sprites/": "green"
 }
 
 [input]

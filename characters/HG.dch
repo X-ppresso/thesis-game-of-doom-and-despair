@@ -12,7 +12,7 @@
 },
 &"default_portrait": "neutral",
 &"description": "The Highschool Girl. Extravagant gyaru, naive and overly friendly.",
-&"display_name": "HG",
+&"display_name": "",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),

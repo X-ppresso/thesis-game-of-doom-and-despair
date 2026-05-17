@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://ce8tpm5k3fwxo"]
 
 [ext_resource type="Script" uid="uid://bubanby4psinw" path="res://Scripts/menu.gd" id="1_7anfk"]
-[ext_resource type="Texture2D" uid="uid://b7ijgganfny53" path="res://asset TA/menu_main.png" id="2_6revv"]
-[ext_resource type="Texture2D" uid="uid://d1l0kp5qdv0om" path="res://sprites/main_ui/logo fr.png" id="3_6revv"]
-[ext_resource type="Texture2D" uid="uid://bwvdkanloscsm" path="res://asset TA/placeholders/buttons/play_normal.png" id="4_6revv"]
-[ext_resource type="Texture2D" uid="uid://tic0t5atqoxy" path="res://asset TA/placeholders/buttons/play_pressed.png" id="5_ukdyq"]
+[ext_resource type="Texture2D" uid="uid://3hh2udowlv3m" path="res://sprites/main_ui/menu_main-Sheet.png" id="2_itu7i"]
+[ext_resource type="Texture2D" uid="uid://cq82yekygx61t" path="res://sprites/main_ui/new_game.png" id="3_jateb"]
 [ext_resource type="Texture2D" uid="uid://bjm7sr0uwumjv" path="res://asset TA/placeholders/buttons/continue_normal.png" id="6_xtfuj"]
 [ext_resource type="Texture2D" uid="uid://ce4dmtwnqdeju" path="res://asset TA/placeholders/buttons/continue_pressed.png" id="7_te4rr"]
 [ext_resource type="Texture2D" uid="uid://bvk6rj8lkoegc" path="res://asset TA/placeholders/buttons/settings_normal.png" id="8_jsy82"]
@@ -12,11 +10,138 @@
 [ext_resource type="Texture2D" uid="uid://drm2sl6qtfarg" path="res://asset TA/placeholders/buttons/quit_normal.png" id="10_ckgtd"]
 [ext_resource type="Texture2D" uid="uid://mf1aj2iwd5l1" path="res://asset TA/placeholders/buttons/quit_pressed.png" id="11_krmfv"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xulg5"]
-texture = ExtResource("2_6revv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6revv"]
+atlas = ExtResource("2_itu7i")
+region = Rect2(0, 0, 640, 360)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2jn2a"]
-texture = ExtResource("3_6revv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukdyq"]
+atlas = ExtResource("2_itu7i")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtfuj"]
+atlas = ExtResource("2_itu7i")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te4rr"]
+atlas = ExtResource("2_itu7i")
+region = Rect2(1920, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsy82"]
+atlas = ExtResource("2_itu7i")
+region = Rect2(2560, 0, 640, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w1aet"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6revv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukdyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtfuj")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_te4rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsy82")
+}],
+"loop": false,
+"name": &"open",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_itu7i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6revv"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_jateb"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition/ColorRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.001, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_itu7i"]
+_data = {
+&"RESET": SubResource("Animation_itu7i"),
+&"fade_in": SubResource("Animation_6revv"),
+&"fade_out": SubResource("Animation_jateb")
+}
 
 [node name="Menu" type="Control" unique_id=1373726558]
 layout_mode = 3
@@ -27,61 +152,69 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7anfk")
 
-[node name="background" type="Panel" parent="." unique_id=1667310794]
-layout_mode = 0
-offset_right = 640.0
-offset_bottom = 360.0
+[node name="background" type="AnimatedSprite2D" parent="." unique_id=1818205882]
+position = Vector2(640, 360)
 scale = Vector2(2, 2)
-theme_override_styles/panel = SubResource("StyleBoxTexture_xulg5")
+sprite_frames = SubResource("SpriteFrames_w1aet")
+animation = &"open"
 
-[node name="logo" type="Panel" parent="." unique_id=2042453445]
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1579537399]
 layout_mode = 0
-offset_left = 666.0
-offset_top = 86.0
-offset_right = 946.0
-offset_bottom = 150.0
+offset_left = 166.0
+offset_top = 415.0
+offset_right = 349.0
+offset_bottom = 458.0
 scale = Vector2(2, 2)
-theme_override_styles/panel = SubResource("StyleBoxTexture_2jn2a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2" unique_id=2087790590]
+layout_mode = 2
+alignment = 1
+
+[node name="New Game" type="TextureButton" parent="MarginContainer2/VBoxContainer" unique_id=49514121]
+layout_mode = 2
+texture_normal = ExtResource("3_jateb")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2122388409]
 layout_mode = 0
-offset_left = 400.0
-offset_top = 300.0
-offset_right = 536.0
-offset_bottom = 520.0005
+offset_left = 139.0
+offset_top = 297.0
+offset_right = 555.0
+offset_bottom = 349.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2087790590]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1580466485]
 layout_mode = 2
 
-[node name="New Game" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=49514121]
-layout_mode = 2
-texture_normal = ExtResource("4_6revv")
-texture_pressed = ExtResource("5_ukdyq")
-
-[node name="Continue" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=760261488]
+[node name="Continue" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=760261488]
 layout_mode = 2
 texture_normal = ExtResource("6_xtfuj")
 texture_pressed = ExtResource("7_te4rr")
 
-[node name="Settings" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=1441049509]
+[node name="Settings" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=1441049509]
 layout_mode = 2
 texture_normal = ExtResource("8_jsy82")
 texture_pressed = ExtResource("9_w1aet")
 
-[node name="Exit" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=31373487]
+[node name="Exit" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=31373487]
 layout_mode = 2
 texture_normal = ExtResource("10_ckgtd")
 texture_pressed = ExtResource("11_krmfv")
 
 [node name="Transition" type="AnimationPlayer" parent="." unique_id=1703144559]
+libraries/ = SubResource("AnimationLibrary_itu7i")
 
 [node name="ColorRect" type="ColorRect" parent="Transition" unique_id=503296464]
 visible = false
-offset_right = 640.0
-offset_bottom = 320.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="animation_finished" from="background" to="." method="_on_background_animation_finished"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
