@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bwsjfexo5t886"]
 
 [ext_resource type="Texture2D" uid="uid://dr0qn75mnijfs" path="res://sprites/main_ui/level selector/menu_level_bg.png" id="1_p5rml"]
-[ext_resource type="Script" uid="uid://c4t77iufhvjh3" path="res://Scenes/ui/levels.gd" id="1_xsk42"]
+[ext_resource type="Script" uid="uid://c4t77iufhvjh3" path="res://Scripts/levels.gd" id="1_xsk42"]
 [ext_resource type="Texture2D" uid="uid://cc7j7gg7hpe5b" path="res://sprites/main_ui/level selector/level_select_box.png" id="2_xsk42"]
 [ext_resource type="Texture2D" uid="uid://dxoaw3l27ruac" path="res://sprites/main_ui/level selector/level_select_week_label.png" id="3_71bfv"]
 [ext_resource type="Texture2D" uid="uid://djsfeqcio0qav" path="res://sprites/main_ui/level selector/level_select_week_num_1_white.png" id="3_l5aod"]
@@ -193,3 +193,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="back/HBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3ehrgywgnco1"
-path="res://.godot/imported/laptop.png-39d2ca2baf38c8e0bf1b3a599d3107c0.ctex"
+uid="uid://rrjr6nkgp6qa"
+path="res://.godot/imported/choice_pressed.png-a9ca890daee9d08f653e2ae87ddd41d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/main_ui/gameplay/devices/laptop.png"
-dest_files=["res://.godot/imported/laptop.png-39d2ca2baf38c8e0bf1b3a599d3107c0.ctex"]
+source_file="res://sprites/main_ui/choice_pressed.png"
+dest_files=["res://.godot/imported/choice_pressed.png-a9ca890daee9d08f653e2ae87ddd41d4.ctex"]
 
 [params]
 

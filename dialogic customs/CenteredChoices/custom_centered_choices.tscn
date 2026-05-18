@@ -16,17 +16,17 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_kurgw")
 
-[node name="Choices" type="VBoxContainer" parent="." unique_id=1588363299]
+[node name="Choices" type="VBoxContainer" parent="." unique_id=10644939]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.919
-anchor_top = 0.115
-anchor_right = 0.919
-anchor_bottom = 0.115
-offset_left = -86.32007
-offset_top = -46.800003
-offset_right = 86.67993
-offset_bottom = 47.199997
+anchor_left = 0.81900007
+anchor_top = 0.40100002
+anchor_right = 0.81900007
+anchor_bottom = 0.40100002
+offset_left = -128.32007
+offset_top = -114.72003
+offset_right = 127.68164
+offset_bottom = 114.27997
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2

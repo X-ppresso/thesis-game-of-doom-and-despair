@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://coh8mbppor4lb"]
+
+[ext_resource type="Texture2D" uid="uid://3ehrgywgnco1" path="res://sprites/main_ui/gameplay/devices/laptop.png" id="1_ovoma"]
+[ext_resource type="Texture2D" uid="uid://w5alighw44eu" path="res://sprites/main_ui/gameplay/devices/laptop_mal_bg.png" id="2_kw6p0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mxfr7"]
+
+[node name="Laptop" type="Control" unique_id=303027291]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="laptop" type="TextureRect" parent="." unique_id=1583075797]
+layout_mode = 0
+offset_left = -27.0
+offset_top = 36.0
+offset_right = 463.0
+offset_bottom = 379.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_ovoma")
+
+[node name="Malware-bg" type="TextureRect" parent="." unique_id=920053256]
+material = SubResource("ShaderMaterial_mxfr7")
+layout_mode = 0
+offset_left = 33.0
+offset_top = 53.0
+offset_right = 463.0
+offset_bottom = 338.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_kw6p0")

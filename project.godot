@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="some random game about digital security"
-run/main_scene="uid://cy10lxvoa4dqh"
+config/name="TroubleShooter"
+run/main_scene="uid://ce8tpm5k3fwxo"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="uid://cy5jsj6orq0x1"
+config/icon="uid://cy5jsj6orq0x1"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3ehrgywgnco1"
-path="res://.godot/imported/laptop.png-39d2ca2baf38c8e0bf1b3a599d3107c0.ctex"
+uid="uid://cd165ahqhe7r2"
+path="res://.godot/imported/choice_focus.png-b2f239b036e2dfdbc5ea2e893fe5b046.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/main_ui/gameplay/devices/laptop.png"
-dest_files=["res://.godot/imported/laptop.png-39d2ca2baf38c8e0bf1b3a599d3107c0.ctex"]
+source_file="res://sprites/main_ui/choice_focus.png"
+dest_files=["res://.godot/imported/choice_focus.png-b2f239b036e2dfdbc5ea2e893fe5b046.ctex"]
 
 [params]
 

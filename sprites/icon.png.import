@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3ehrgywgnco1"
-path="res://.godot/imported/laptop.png-39d2ca2baf38c8e0bf1b3a599d3107c0.ctex"
+uid="uid://cy5jsj6orq0x1"
+path="res://.godot/imported/icon.png-82ea131e750a89467e27b5ff9b11ce77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/main_ui/gameplay/devices/laptop.png"
-dest_files=["res://.godot/imported/laptop.png-39d2ca2baf38c8e0bf1b3a599d3107c0.ctex"]
+source_file="res://sprites/icon.png"
+dest_files=["res://.godot/imported/icon.png-82ea131e750a89467e27b5ff9b11ce77.ctex"]
 
 [params]
 

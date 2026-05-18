@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://xabgm4ie8eog"]
+
+[ext_resource type="Texture2D" uid="uid://cd165ahqhe7r2" path="res://sprites/main_ui/choice_focus.png" id="1_82ixx"]
+
+[resource]
+content_margin_bottom = 20.0
+texture = ExtResource("1_82ixx")

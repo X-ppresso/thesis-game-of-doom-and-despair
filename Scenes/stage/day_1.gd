@@ -9,7 +9,7 @@ const TIMELINE_HG_WEEK1_POST := "highschooler_week1_post"
 
 func _ready() -> void:
 	pass
-	# Dialogic.start(TIMELINE_HG_WEEK1)
+	Dialogic.start(TIMELINE_HG_WEEK1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
