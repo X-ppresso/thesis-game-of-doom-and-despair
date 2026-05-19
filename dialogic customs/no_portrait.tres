@@ -39,7 +39,7 @@ overrides = {
 "box_panel": "\"res://dialogic customs/no_portrait_box.tres\"",
 "box_size": "Vector2(720, 140)",
 "name_label_box_offset": "Vector2(10000, 0)",
-"next_indicator_texture": "\"res://icon.svg\"",
+"next_indicator_texture": "\"res://sprites/main_ui/indicator.png\"",
 "typing_sounds_enabled": "false"
 }
 
@@ -66,4 +66,4 @@ layer_info = {
 "13": SubResource("Resource_7xdyg"),
 "15": SubResource("Resource_b416w")
 }
-metadata/_latest_layer = ""
+metadata/_latest_layer = "13"

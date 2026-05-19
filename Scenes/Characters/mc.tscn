@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://coinjd5byry8i"]
 
+[ext_resource type="Texture2D" uid="uid://q47rb8xec8gt" path="res://sprites/character walk sprites/shadow.png" id="1_hdemp"]
 [ext_resource type="Texture2D" uid="uid://dtlujil1857i4" path="res://sprites/character walk sprites/mc.png" id="1_xg2jd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ebvd"]
@@ -170,6 +171,11 @@ animations = [{
 }]
 
 [node name="MC" type="Node2D" unique_id=539553132]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1772308201]
+modulate = Color(1, 1, 1, 0.33333334)
+position = Vector2(0, 4)
+texture = ExtResource("1_hdemp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2058174058]
 sprite_frames = SubResource("SpriteFrames_jwcrh")

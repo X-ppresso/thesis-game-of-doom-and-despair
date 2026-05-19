@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://s2e1lryxdn4h"]
 
 [ext_resource type="Texture2D" uid="uid://dobeg4cgr0y1j" path="res://sprites/character walk sprites/hg1.png" id="1_5frpy"]
+[ext_resource type="Texture2D" uid="uid://q47rb8xec8gt" path="res://sprites/character walk sprites/shadow.png" id="1_jtja5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_si21t"]
 atlas = ExtResource("1_5frpy")
@@ -170,6 +171,11 @@ animations = [{
 }]
 
 [node name="HG1" type="Node2D" unique_id=534125666]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=275676647]
+modulate = Color(1, 1, 1, 0.33333334)
+position = Vector2(0, 4)
+texture = ExtResource("1_jtja5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1508576756]
 sprite_frames = SubResource("SpriteFrames_qtblf")

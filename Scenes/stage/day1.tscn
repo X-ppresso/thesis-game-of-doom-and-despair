@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cjs8ify76mba1" path="res://Scenes/stage/day_1.gd" id="1_r2dlb"]
 [ext_resource type="PackedScene" uid="uid://coinjd5byry8i" path="res://Scenes/Characters/mc.tscn" id="2_bwpxn"]
 [ext_resource type="PackedScene" uid="uid://s2e1lryxdn4h" path="res://Scenes/Characters/hg1.tscn" id="3_tap13"]
-[ext_resource type="Texture2D" uid="uid://cyc8m1gx5m4p4" path="res://sprites/main_ui/gameplay/devices/phone.png" id="4_u0our"]
+[ext_resource type="PackedScene" uid="uid://5cnha38dy6uo" path="res://Scenes/ui/phone.tscn" id="6_aenqo"]
 [ext_resource type="PackedScene" uid="uid://coh8mbppor4lb" path="res://Scenes/ui/Laptop.tscn" id="6_r2dlb"]
 
 [node name="Day1" type="Node2D" unique_id=786317998]
@@ -18,20 +18,15 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_45q1e")
 
 [node name="MC" parent="." unique_id=539553132 instance=ExtResource("2_bwpxn")]
-position = Vector2(1123, 408)
+position = Vector2(1142.0001, 408.00003)
 scale = Vector2(5, 5)
 
 [node name="HG1" parent="." unique_id=534125666 instance=ExtResource("3_tap13")]
-position = Vector2(82, 414.00003)
+position = Vector2(85.00006, 408)
 scale = Vector2(5, 5)
 
-[node name="phone" type="TextureRect" parent="." unique_id=444338929]
-offset_left = 63.0
-offset_top = 745.0
-offset_right = 236.0
-offset_bottom = 1066.0
-scale = Vector2(2, 2)
-texture = ExtResource("4_u0our")
-
 [node name="Laptop" parent="." unique_id=303027291 instance=ExtResource("6_r2dlb")]
-visible = false
+position = Vector2(0, 1020)
+
+[node name="Phone" parent="." unique_id=616061595 instance=ExtResource("6_aenqo")]
+position = Vector2(17, 784)

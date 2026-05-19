@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://5cnha38dy6uo"]
+
+[ext_resource type="Texture2D" uid="uid://cyc8m1gx5m4p4" path="res://sprites/main_ui/gameplay/devices/phone.png" id="1_wrq58"]
+
+[node name="Phone" type="Node2D" unique_id=616061595]
+
+[node name="phone" type="TextureRect" parent="." unique_id=1456403067]
+offset_right = 172.0
+offset_bottom = 312.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_wrq58")
