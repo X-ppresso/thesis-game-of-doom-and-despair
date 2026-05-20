@@ -1,11 +1,61 @@
 [gd_scene format=3 uid="uid://5cnha38dy6uo"]
 
 [ext_resource type="Texture2D" uid="uid://cyc8m1gx5m4p4" path="res://sprites/main_ui/gameplay/devices/phone.png" id="1_wrq58"]
+[ext_resource type="Texture2D" uid="uid://bep8nq03hxddy" path="res://sprites/main_ui/gameplay/devices/phone_malware.png" id="2_8deqj"]
+[ext_resource type="Texture2D" uid="uid://ck7wv67knthmu" path="res://sprites/main_ui/gameplay/devices/phone_bloatware.png" id="3_pfqnc"]
+[ext_resource type="Texture2D" uid="uid://c30ihbhwfxhne" path="res://sprites/main_ui/gameplay/minigame assets/magnify_small.png" id="3_w3hyv"]
+[ext_resource type="Texture2D" uid="uid://baqpf0yhv7k5" path="res://sprites/main_ui/gameplay/minigame assets/button_trash.png" id="5_dxfmk"]
+[ext_resource type="Texture2D" uid="uid://bb2lxpix2sfi1" path="res://sprites/main_ui/gameplay/minigame assets/button_keep.png" id="6_dxfmk"]
+[ext_resource type="Texture2D" uid="uid://dt1t7phpso3ws" path="res://sprites/main_ui/gameplay/minigame assets/button_keep_pressed.png" id="7_2uqfl"]
+[ext_resource type="Texture2D" uid="uid://7y5liad3hg80" path="res://sprites/main_ui/gameplay/minigame assets/button_keep_hover.png" id="8_5w6a7"]
+[ext_resource type="Texture2D" uid="uid://beyftifirn77q" path="res://sprites/main_ui/gameplay/minigame assets/button_trash_pressed.png" id="9_odagh"]
+[ext_resource type="Texture2D" uid="uid://di54edodrd6gl" path="res://sprites/main_ui/gameplay/minigame assets/button_trash_hover.png" id="10_sfsvj"]
 
 [node name="Phone" type="Node2D" unique_id=616061595]
 
 [node name="phone" type="TextureRect" parent="." unique_id=1456403067]
-offset_right = 172.0
-offset_bottom = 312.0
+offset_right = 88.0
+offset_bottom = 157.0
 scale = Vector2(2, 2)
 texture = ExtResource("1_wrq58")
+
+[node name="Malwarebg" type="TextureRect" parent="." unique_id=823176000]
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 86.0
+offset_bottom = 156.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_8deqj")
+
+[node name="magnifier" type="Sprite2D" parent="." unique_id=905710803]
+position = Vector2(88, 266)
+scale = Vector2(2, 2)
+texture = ExtResource("3_w3hyv")
+
+[node name="Bloatbg" type="TextureRect" parent="." unique_id=1789346846]
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 86.0
+offset_bottom = 156.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_pfqnc")
+
+[node name="button_keep" type="TextureButton" parent="." unique_id=1672131170]
+offset_left = 102.0
+offset_top = 199.0
+offset_right = 131.0
+offset_bottom = 230.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("6_dxfmk")
+texture_pressed = ExtResource("7_2uqfl")
+texture_hover = ExtResource("8_5w6a7")
+
+[node name="button_trash" type="TextureButton" parent="." unique_id=1976062137]
+offset_left = 12.0
+offset_top = 200.0
+offset_right = 41.0
+offset_bottom = 231.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("5_dxfmk")
+texture_pressed = ExtResource("9_odagh")
+texture_hover = ExtResource("10_sfsvj")

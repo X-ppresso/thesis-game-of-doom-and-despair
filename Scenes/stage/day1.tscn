@@ -27,6 +27,8 @@ scale = Vector2(5, 5)
 
 [node name="Laptop" parent="." unique_id=303027291 instance=ExtResource("6_r2dlb")]
 position = Vector2(0, 1020)
+scale = Vector2(2, 2)
 
 [node name="Phone" parent="." unique_id=616061595 instance=ExtResource("6_aenqo")]
-position = Vector2(17, 784)
+position = Vector2(27, 745)
+scale = Vector2(2, 2)

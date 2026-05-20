@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://coh8mbppor4lb"]
 
 [ext_resource type="Texture2D" uid="uid://3ehrgywgnco1" path="res://sprites/main_ui/gameplay/devices/laptop.png" id="1_ovoma"]
-[ext_resource type="Texture2D" uid="uid://w5alighw44eu" path="res://sprites/main_ui/gameplay/devices/laptop_mal_bg.png" id="2_kw6p0"]
+[ext_resource type="Texture2D" uid="uid://d2w41mcq5osda" path="res://sprites/main_ui/gameplay/devices/laptop_malware.png" id="2_kw6p0"]
+[ext_resource type="Texture2D" uid="uid://b805s1te024t5" path="res://sprites/main_ui/gameplay/devices/laptop_bloat.png" id="3_afpk7"]
+[ext_resource type="Texture2D" uid="uid://c30ihbhwfxhne" path="res://sprites/main_ui/gameplay/minigame assets/magnify_small.png" id="3_lpoq8"]
+[ext_resource type="Texture2D" uid="uid://baqpf0yhv7k5" path="res://sprites/main_ui/gameplay/minigame assets/button_trash.png" id="5_enfyd"]
+[ext_resource type="Texture2D" uid="uid://beyftifirn77q" path="res://sprites/main_ui/gameplay/minigame assets/button_trash_pressed.png" id="6_hg00q"]
+[ext_resource type="Texture2D" uid="uid://bb2lxpix2sfi1" path="res://sprites/main_ui/gameplay/minigame assets/button_keep.png" id="6_qybhx"]
+[ext_resource type="Texture2D" uid="uid://di54edodrd6gl" path="res://sprites/main_ui/gameplay/minigame assets/button_trash_hover.png" id="7_0042d"]
+[ext_resource type="Texture2D" uid="uid://dt1t7phpso3ws" path="res://sprites/main_ui/gameplay/minigame assets/button_keep_pressed.png" id="7_rl34b"]
+[ext_resource type="Texture2D" uid="uid://7y5liad3hg80" path="res://sprites/main_ui/gameplay/minigame assets/button_keep_hover.png" id="8_2ce2a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mxfr7"]
 
@@ -10,17 +18,49 @@
 [node name="laptop" type="TextureRect" parent="." unique_id=1583075797]
 offset_left = -27.0
 offset_top = 36.0
-offset_right = 463.0
-offset_bottom = 379.0
+offset_right = 235.0
+offset_bottom = 208.0
 scale = Vector2(2, 2)
 texture = ExtResource("1_ovoma")
 
-[node name="Malware-bg" type="TextureRect" parent="." unique_id=920053256]
-visible = false
+[node name="Malwarebg" type="TextureRect" parent="." unique_id=920053256]
 material = SubResource("ShaderMaterial_mxfr7")
-offset_left = 33.0
-offset_top = 53.0
-offset_right = 463.0
-offset_bottom = 338.0
+offset_left = 21.0
+offset_top = 46.0
+offset_right = 235.0
+offset_bottom = 178.0
 scale = Vector2(2, 2)
 texture = ExtResource("2_kw6p0")
+
+[node name="magnifier" type="Sprite2D" parent="." unique_id=100143004]
+position = Vector2(53, 188)
+scale = Vector2(2, 2)
+texture = ExtResource("3_lpoq8")
+
+[node name="Bloatbg" type="TextureRect" parent="." unique_id=391502784]
+offset_left = 21.0
+offset_top = 46.0
+offset_right = 235.0
+offset_bottom = 178.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_afpk7")
+
+[node name="button_trash" type="TextureButton" parent="." unique_id=572846995]
+offset_left = 105.0
+offset_top = 232.0
+offset_right = 132.0
+offset_bottom = 261.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("5_enfyd")
+texture_pressed = ExtResource("6_hg00q")
+texture_hover = ExtResource("7_0042d")
+
+[node name="button_keep" type="TextureButton" parent="." unique_id=373441086]
+offset_left = 309.0
+offset_top = 232.0
+offset_right = 336.0
+offset_bottom = 261.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("6_qybhx")
+texture_pressed = ExtResource("7_rl34b")
+texture_hover = ExtResource("8_2ce2a")
