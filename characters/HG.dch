@@ -26,6 +26,15 @@
 "scale": 2.5,
 "scene": ""
 },
+"happy": {
+"export_overrides": {
+"image": "\"res://sprites/character portraits/highschool_girl/face_hsgirl_happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 2.5,
+"scene": ""
+},
 "neutral": {
 "export_overrides": {
 "image": "\"res://sprites/character portraits/highschool_girl/face_hsgirl_neutral.png\""
@@ -48,6 +57,15 @@
 "shock": {
 "export_overrides": {
 "image": "\"res://sprites/character portraits/highschool_girl/face_hsgirl_shock.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 2.5,
+"scene": ""
+},
+"smile_neutral": {
+"export_overrides": {
+"image": "\"res://sprites/character portraits/highschool_girl/face_hsgirl_smile_neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

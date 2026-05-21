@@ -17,6 +17,15 @@
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
+"eepy": {
+"export_overrides": {
+"image": "\"res://sprites/character portraits/mc/face_mc_eepy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 2.5,
+"scene": ""
+},
 "frown": {
 "export_overrides": {
 "image": "\"res://sprites/character portraits/mc/face_mc_frown.png\""
@@ -47,6 +56,15 @@
 "neutral_closed": {
 "export_overrides": {
 "image": "\"res://sprites/character portraits/mc/face_mc_neutral_closed1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 2.5,
+"scene": ""
+},
+"sad": {
+"export_overrides": {
+"image": "\"res://sprites/character portraits/mc/face_mc_sad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

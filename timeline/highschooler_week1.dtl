@@ -16,37 +16,37 @@ MC: (What's that noise?)
 [style name="no_portrait"]
 ...[pause=0.3][b]Door opens loudly.[/b]
 [style name="bwuh"]
-HG (neutral): HELLO!!! I NEED YOU!
-MC (shock): HUH?![pause=0.5] HI, [speed=1] WHAAaaaaat can I help you with?
+HG (smile_neutral): HELLO!!! I NEED YOU!
+MC (eepy): HUH?![pause=0.5] HI, [speed=1] WHAAaaaaat can I help you with?
 HG (frown): My phone! It's broken!
-HG (neutral): You can repair it, right?
+HG (neutral_closed): You can repair it, right?
 MC (neutral): Calm down, please. Let me take a look..
 label diagnose_intro
 - What happened?
 	MC: So, what's wrong with it?
-	HG (frown): It started buzzing and there were so much things I don’t know appearing on the screen. 
+	HG (neutral): It started buzzing and there were so much things I don’t know appearing on the screen.
 	HG (frown): It was burning hot, I couldn’t use it at ALL!
 	HG (frown): I thought I could just ignore it for now and ask someone later, BUT!
 	HG (shock): The teacher suddenly announced the exam for next week!
-	HG (frown): And I haven’t studied- a. single. word.
-	HG (shock): And all of my school notes are in it- If I lose it now... I'm gonna fail the exam for SURE!!
+	HG (shock): And I haven’t studied- a. single. word.
+	HG (frown): And all of my school notes are in it- If I lose it now... I'm gonna fail the exam for SURE!!
 - How did this happen?
 	MC (neutral): (I should ask her what the problem is, before anything else.)
 	jump diagnose_intro
-MC: hmm...
+MC (neutral_closed): hmm...
 - How did this happen?
-	MC: What did you do before it happened?
+	MC (neutral): What did you do before it happened?
 	HG (frown): I don't know! It started going crazy first thing in the morning.
 	MC (neutral): what about the day before?
-	HG (neutral): Oh! Now that you mention it, there's also that game...
+	HG (smile_neutral): Oh! Now that you mention it, there's also that game...
 	MC: That game?
 	HG (neutral_closed): Yeah! My friend suddenly texted me- saying she made a game.
-	HG (neutral): So she sent me the game for me to try! Isn't that so cool?
-	HG (neutral): It was getting late though, so I installed it and went to sleep.
+	HG (happy): So she sent me the game for me to try! Isn't that so cool?
+	HG (neutral_closed): It was getting late though, so I installed it and went to sleep.
 	MC (frown): Was this friend... always a developer?
-	HG (neutral): I had no idea! It was so sudden, I never expected it!
+	HG (smile_neutral): I had no idea! It was so sudden, I never expected it!
 	HG (neutral_closed): Isn't she so impressive?
-	MC: oh... I see...
+	MC (sad): oh... I see...
 	HG (frown): ...?
 label diagnose_choice
 MC: (Based on what she told me, the problem must be...)
@@ -54,7 +54,7 @@ MC: (Based on what she told me, the problem must be...)
 	jump diagnose_correct
 - Bloatware
 	MC (frown): (wait, that isn't quite right...)
-	HG (frown): What's taking so long?
+	HG (neutral): What's taking so long?
 	set {Global.current_day_score} -= 20
 	[signal arg="wrong_diagnosis"]
 	if {Global.current_day_score} <= 0:
@@ -69,9 +69,9 @@ MC: (Based on what she told me, the problem must be...)
 		jump diagnose_failed
 	jump diagnose_choice
 label diagnose_failed
-HG (frown): Uhm... you look like you're having a hard time.
+HG (neutral): Uhm... you look like you're having a hard time.
 HG (frown): Can I have my phone back for now?
-MC (frown): Right... I'm sorry.
+MC (sad): Right... I'm sorry.
 leave HG
 [signal arg="day_failed"]
 jump timeline_end
