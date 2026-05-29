@@ -178,5 +178,6 @@ position = Vector2(0, 4)
 texture = ExtResource("1_jtja5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1508576756]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_qtblf")
 animation = &"idle_right"

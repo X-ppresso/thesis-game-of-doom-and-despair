@@ -178,5 +178,6 @@ position = Vector2(0, 4)
 texture = ExtResource("1_hdemp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2058174058]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_jwcrh")
 animation = &"walk_left"

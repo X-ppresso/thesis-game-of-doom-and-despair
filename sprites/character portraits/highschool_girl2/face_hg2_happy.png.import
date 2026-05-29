@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nm4t8kmi106h"
-path="res://.godot/imported/MC-Sheet.png-b23971da5af0115ccf52ee7f443a6fe0.ctex"
+uid="uid://dn3xy60t652ma"
+path="res://.godot/imported/face_hg2_happy.png-a38e515d79a7a95e00ab83506454f9b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/main_ui/gameplay/characters/MC-Sheet.png"
-dest_files=["res://.godot/imported/MC-Sheet.png-b23971da5af0115ccf52ee7f443a6fe0.ctex"]
+source_file="res://sprites/character portraits/highschool_girl2/face_hg2_happy.png"
+dest_files=["res://.godot/imported/face_hg2_happy.png-a38e515d79a7a95e00ab83506454f9b8.ctex"]
 
 [params]
 
