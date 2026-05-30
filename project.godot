@@ -23,6 +23,8 @@ boot_splash/minimum_display_time=1000
 
 Dialogic="*uid://ds2q0uclmolvu"
 Global="*uid://dir52ptkx0tmr"
+SaveManager="*res://Scripts/save_manager.gd"
+SettingsManager="*res://Scripts/settings_manager.gd"
 
 [dialogic]
 
@@ -34,7 +36,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "highschooler_week1": "res://timeline/highschooler_week1.dtl",
 "highschooler_week1_post": "res://timeline/highschooler_week1_post.dtl",
-"huh": "res://timeline/test.dtl"
+"test": "res://timeline/test.dtl"
 }
 layout/style_directory={
 "bwuh": "res://dialogic customs/bwuh.tres",
