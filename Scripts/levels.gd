@@ -181,16 +181,20 @@ func _color_for_status(status: int) -> Color:
 
 
 func _label_for(week: int, day: int, status: int) -> String:
-	if status == SaveManager.Status.LOCKED:
-		return "Locked"
 	var title := SaveManager.get_day_title(week, day)
+	# Days without a stage scene yet are shown as "coming soon" (they report a
+	# LOCKED status, but the reason is "not built", not "gated").
 	if not SaveManager.is_day_built(week, day):
 		return "%s  (soon)" % title
-	if status == SaveManager.Status.CLEARED:
-		return "%s  (cleared: %d)" % [title, SaveManager.get_day_score(week, day)]
-	if status == SaveManager.Status.FAILED:
-		return "%s  (failed)" % title
-	return title
+	match status:
+		SaveManager.Status.CLEARED:
+			return "%s  (cleared: %d)" % [title, SaveManager.get_day_score(week, day)]
+		SaveManager.Status.FAILED:
+			return "%s  (failed)" % title
+		SaveManager.Status.LOCKED:
+			return "%s  (locked)" % title
+		_:
+			return title
 
 
 # --------------------------------------------------------------- selection

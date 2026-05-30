@@ -7,9 +7,11 @@ extends Node2D
 const TIMELINE_HG_WEEK1 := "highschooler_week1"
 const TIMELINE_HG_WEEK1_POST := "highschooler_week1_post"
 
-# This stage is Week 1, Day 1.
+# This stage is the Highschool Girl's 1st encounter. Per the GDD schedule that
+# is Week 1, Tuesday (day 2). Which minigame + difficulty it launches is read
+# from SaveManager.DAY_CONFIG for this slot.
 const WEEK := 1
-const DAY := 1
+const DAY := 2
 
 var _current_puzzle: Node = null
 var _pending_post_timeline := ""

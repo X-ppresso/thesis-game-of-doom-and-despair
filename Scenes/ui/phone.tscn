@@ -33,6 +33,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_w3hyv")
 
 [node name="Bloatbg" type="TextureRect" parent="." unique_id=1789346846]
+visible = false
 offset_left = 12.0
 offset_top = 14.0
 offset_right = 86.0
@@ -41,6 +42,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_pfqnc")
 
 [node name="button_keep" type="TextureButton" parent="." unique_id=1672131170]
+visible = false
 offset_left = 102.0
 offset_top = 199.0
 offset_right = 131.0
@@ -51,6 +53,7 @@ texture_pressed = ExtResource("7_2uqfl")
 texture_hover = ExtResource("8_5w6a7")
 
 [node name="button_trash" type="TextureButton" parent="." unique_id=1976062137]
+visible = false
 offset_left = 12.0
 offset_top = 200.0
 offset_right = 41.0

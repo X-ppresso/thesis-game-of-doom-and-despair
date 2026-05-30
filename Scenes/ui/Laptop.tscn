@@ -24,6 +24,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_ovoma")
 
 [node name="Malwarebg" type="TextureRect" parent="." unique_id=920053256]
+visible = false
 material = SubResource("ShaderMaterial_mxfr7")
 offset_left = 21.0
 offset_top = 46.0
@@ -33,12 +34,12 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_kw6p0")
 
 [node name="magnifier" type="Sprite2D" parent="." unique_id=100143004]
+visible = false
 position = Vector2(53, 188)
 scale = Vector2(2, 2)
 texture = ExtResource("3_lpoq8")
 
 [node name="Bloatbg" type="TextureRect" parent="." unique_id=391502784]
-visible = false
 offset_left = 21.0
 offset_top = 46.0
 offset_right = 235.0
@@ -47,7 +48,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_afpk7")
 
 [node name="button_trash" type="TextureButton" parent="." unique_id=572846995]
-visible = false
 offset_left = 105.0
 offset_top = 232.0
 offset_right = 132.0
@@ -58,7 +58,6 @@ texture_pressed = ExtResource("6_hg00q")
 texture_hover = ExtResource("7_0042d")
 
 [node name="button_keep" type="TextureButton" parent="." unique_id=373441086]
-visible = false
 offset_left = 309.0
 offset_top = 232.0
 offset_right = 336.0
