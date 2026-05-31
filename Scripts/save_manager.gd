@@ -111,11 +111,25 @@ const DAY_CONFIG := {
 }
 
 ## Maps a minigame id (declared per client above) to the scene that plays it.
-## "malware" = laptop device, "malware_phone" = same minigame in a phone frame.
+## "<game>" = laptop device, "<game>_phone" = same minigame in a phone frame.
 const GAME_SCENES := {
 	"malware": "res://Scenes/ui/laptop_malware.tscn",
 	"malware_phone": "res://Scenes/ui/phone_malware.tscn",
+	"bloat": "res://Scenes/ui/laptop_bloat.tscn",
+	"bloat_phone": "res://Scenes/ui/phone_bloat.tscn",
 }
+
+## Maps a client's *problem* to the base minigame that fixes it. Problems not
+## listed here (e.g. "system") have no minigame built yet.
+const PROBLEM_GAMES := {
+	"bloat": "bloat",
+	"malware": "malware",
+}
+
+## Generic stage that auto-runs a walk-in day's minigame(s). Used for days made
+## up entirely of faceless "Random" clients; special-NPC days get their own scene.
+const WALKIN_SCENE := "res://Scenes/stage/walkin.tscn"
+const WALKIN_NPC := "Random"
 
 ## Per-week money quota target (from the GDD).
 const WEEK_QUOTAS := {
@@ -152,35 +166,95 @@ func get_day_title(week: int, day: int) -> String:
 	return _day_config(week, day).get("title", "Day %d" % day)
 
 
+## The stage scene that runs this day:
+##  - an explicit "scene" (special-NPC days with their own dialogue), else
+##  - the generic walk-in stage if the day is an all-faceless day whose every
+##    problem has a built minigame, else
+##  - "" (not playable yet -> shown as "soon").
 func get_day_scene(week: int, day: int) -> String:
-	return _day_config(week, day).get("scene", "")
+	var explicit: String = _day_config(week, day).get("scene", "")
+	if explicit != "":
+		return explicit
+	if not get_day_steps(week, day).is_empty():
+		return WALKIN_SCENE
+	return ""
 
 
 func get_day_clients(week: int, day: int) -> Array:
 	return _day_config(week, day).get("clients", [])
 
 
-## The first client of this day whose minigame is built (has a "game" id), or {}.
-func _playable_client(week: int, day: int) -> Dictionary:
+## Resolves a (problem, device) pair to a minigame id, or "" if not built.
+## device "phone" -> "<game>_phone", anything else -> "<game>".
+func _problem_game(problem: String, device: String) -> String:
+	var base: String = PROBLEM_GAMES.get(problem, "")
+	if base == "":
+		return ""
+	return base + ("_phone" if device == "phone" else "")
+
+
+## The minigame ids a single client requires, in order, or [] if any of its
+## problems has no built minigame. An explicit "game" id wins (special clients).
+func client_games(client: Dictionary) -> Array:
+	var explicit: String = client.get("game", "")
+	if explicit != "":
+		return [explicit]
+	var problems: Array = client.get("problems", [])
+	if problems.is_empty():
+		return []
+	var device: String = client.get("device", "pc")
+	var games: Array = []
+	for p in problems:
+		var g := _problem_game(str(p), device)
+		if g == "":
+			return []   # an unbuilt problem -> this client isn't playable yet
+		games.append(g)
+	return games
+
+
+## The ordered list of {game, difficulty} steps that auto-running this day would
+## play. Non-empty ONLY when every client is a faceless "Random" walk-in AND each
+## of their problems maps to a built minigame. Special-NPC days return [] (they
+## need their own dialogue stage), as do days with an unbuilt problem.
+func get_day_steps(week: int, day: int) -> Array:
+	var clients := get_day_clients(week, day)
+	if clients.is_empty():
+		return []
+	var steps: Array = []
+	for c in clients:
+		if not (c is Dictionary) or c.get("npc", "") != WALKIN_NPC:
+			return []   # a special NPC -> not an auto-run walk-in day
+		var games := client_games(c)
+		if games.is_empty():
+			return []   # unbuilt problem -> day not auto-runnable
+		for g in games:
+			steps.append({"game": g, "difficulty": c.get("difficulty", {})})
+	return steps
+
+
+# --- single-minigame accessors, used by special stages (e.g. day_1.gd) -------
+
+## The first client of this day with an explicit minigame id, or {}.
+func _explicit_client(week: int, day: int) -> Dictionary:
 	for c in get_day_clients(week, day):
 		if c is Dictionary and c.get("game", "") != "":
 			return c
 	return {}
 
 
-## The minigame id launched for this day (e.g. "malware_phone"), or "".
+## The minigame id a special stage should launch (e.g. "malware_phone"), or "".
 func get_day_game(week: int, day: int) -> String:
-	return _playable_client(week, day).get("game", "")
+	return _explicit_client(week, day).get("game", "")
 
 
-## The difficulty values for this day's minigame (see DAY_CONFIG), or {}.
+## The difficulty values for that minigame (see DAY_CONFIG), or {}.
 func get_day_difficulty(week: int, day: int) -> Dictionary:
-	return _playable_client(week, day).get("difficulty", {})
+	return _explicit_client(week, day).get("difficulty", {})
 
 
-## A day is "built" (playable) only if it declares a stage scene.
+## A day is "built" (playable) if it resolves to a stage scene.
 func is_day_built(week: int, day: int) -> bool:
-	return _day_config(week, day).has("scene")
+	return get_day_scene(week, day) != ""
 
 
 # Built days in schedule order. Used so availability skips over not-yet-built

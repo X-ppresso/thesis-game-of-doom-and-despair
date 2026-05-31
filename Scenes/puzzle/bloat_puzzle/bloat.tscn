@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbloatpuzzle01"]
+
+[ext_resource type="Script" path="res://Scripts/bloat/bloat.gd" id="1_b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ui"]
+font_size = 18
+font_color = Color(1, 1, 1, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="card_sb"]
+bg_color = Color(0.16, 0.16, 0.26, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.62, 0.64, 0.82, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Bloat" type="Node2D"]
+script = ExtResource("1_b")
+total_items = 10
+bad_items = 5
+wrong_penalty = 10
+
+[node name="Card" type="Control" parent="."]
+mouse_filter = 2
+offset_right = 400.0
+offset_bottom = 320.0
+
+[node name="Panel" type="Panel" parent="Card"]
+mouse_filter = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("card_sb")
+
+[node name="Icon" type="TextureRect" parent="Card"]
+mouse_filter = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 0.68
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 0.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="Card"]
+mouse_filter = 2
+anchors_preset = 15
+anchor_top = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = -8.0
+horizontal_alignment = 1
+vertical_alignment = 1
+label_settings = SubResource("LabelSettings_ui")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+mouse_filter = 2
+offset_left = 350.0
+offset_top = 60.0
+offset_right = 600.0
+offset_bottom = 90.0
+text = "Score: 100"
+label_settings = SubResource("LabelSettings_ui")
+
+[node name="ProgressLabel" type="Label" parent="UI"]
+mouse_filter = 2
+offset_left = 760.0
+offset_top = 60.0
+offset_right = 1090.0
+offset_bottom = 90.0
+text = "Apps left: 0"
+horizontal_alignment = 2
+label_settings = SubResource("LabelSettings_ui")
+
+[node name="HintLabel" type="Label" parent="UI"]
+mouse_filter = 2
+offset_left = 350.0
+offset_top = 440.0
+offset_right = 1090.0
+offset_bottom = 466.0
+text = "Keep the apps you need, trash the bloat. Use the buttons below."
+horizontal_alignment = 1
+label_settings = SubResource("LabelSettings_ui")

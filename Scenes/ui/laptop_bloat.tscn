@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://claptopbloat0a"]
+
+[ext_resource type="Script" path="res://Scripts/device_bloat.gd" id="0_script"]
+[ext_resource type="Texture2D" uid="uid://3ehrgywgnco1" path="res://sprites/main_ui/gameplay/devices/laptop.png" id="1_lap"]
+[ext_resource type="Texture2D" uid="uid://b805s1te024t5" path="res://sprites/main_ui/gameplay/devices/laptop_bloat.png" id="2_bloat"]
+[ext_resource type="Texture2D" uid="uid://baqpf0yhv7k5" path="res://sprites/main_ui/gameplay/minigame assets/button_trash.png" id="3_tn"]
+[ext_resource type="Texture2D" uid="uid://beyftifirn77q" path="res://sprites/main_ui/gameplay/minigame assets/button_trash_pressed.png" id="4_tp"]
+[ext_resource type="Texture2D" uid="uid://di54edodrd6gl" path="res://sprites/main_ui/gameplay/minigame assets/button_trash_hover.png" id="5_th"]
+[ext_resource type="Texture2D" uid="uid://bb2lxpix2sfi1" path="res://sprites/main_ui/gameplay/minigame assets/button_keep.png" id="6_kn"]
+[ext_resource type="Texture2D" uid="uid://dt1t7phpso3ws" path="res://sprites/main_ui/gameplay/minigame assets/button_keep_pressed.png" id="7_kp"]
+[ext_resource type="Texture2D" uid="uid://7y5liad3hg80" path="res://sprites/main_ui/gameplay/minigame assets/button_keep_hover.png" id="8_kh"]
+
+[node name="LaptopBloat" type="Node2D"]
+script = ExtResource("0_script")
+card_fract = Rect2(0.341, 0.061, 0.318, 0.470)
+
+[node name="Frame" type="Node2D" parent="."]
+position = Vector2(150, 36)
+scale = Vector2(1.8, 1.8)
+
+[node name="laptop" type="TextureRect" parent="Frame"]
+offset_left = -27.0
+offset_top = 36.0
+offset_right = 235.0
+offset_bottom = 208.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_lap")
+
+[node name="Bloatbg" type="TextureRect" parent="Frame"]
+offset_left = 21.0
+offset_top = 46.0
+offset_right = 235.0
+offset_bottom = 178.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_bloat")
+
+[node name="button_trash" type="TextureButton" parent="Frame"]
+offset_left = 105.0
+offset_top = 232.0
+offset_right = 132.0
+offset_bottom = 261.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_tn")
+texture_pressed = ExtResource("4_tp")
+texture_hover = ExtResource("5_th")
+
+[node name="button_keep" type="TextureButton" parent="Frame"]
+offset_left = 309.0
+offset_top = 232.0
+offset_right = 336.0
+offset_bottom = 261.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("6_kn")
+texture_pressed = ExtResource("7_kp")
+texture_hover = ExtResource("8_kh")
