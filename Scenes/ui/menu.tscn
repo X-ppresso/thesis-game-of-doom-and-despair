@@ -3,12 +3,17 @@
 [ext_resource type="Script" uid="uid://bubanby4psinw" path="res://Scripts/menu.gd" id="1_7anfk"]
 [ext_resource type="Texture2D" uid="uid://3hh2udowlv3m" path="res://sprites/main_ui/menu_main-Sheet.png" id="2_itu7i"]
 [ext_resource type="Texture2D" uid="uid://cq82yekygx61t" path="res://sprites/main_ui/new_game.png" id="3_jateb"]
-[ext_resource type="Texture2D" uid="uid://bjm7sr0uwumjv" path="res://asset TA/placeholders/buttons/continue_normal.png" id="6_xtfuj"]
-[ext_resource type="Texture2D" uid="uid://ce4dmtwnqdeju" path="res://asset TA/placeholders/buttons/continue_pressed.png" id="7_te4rr"]
-[ext_resource type="Texture2D" uid="uid://bvk6rj8lkoegc" path="res://asset TA/placeholders/buttons/settings_normal.png" id="8_jsy82"]
-[ext_resource type="Texture2D" uid="uid://cm4uekavwt86m" path="res://asset TA/placeholders/buttons/settings_pressed.png" id="9_w1aet"]
-[ext_resource type="Texture2D" uid="uid://drm2sl6qtfarg" path="res://asset TA/placeholders/buttons/quit_normal.png" id="10_ckgtd"]
-[ext_resource type="Texture2D" uid="uid://mf1aj2iwd5l1" path="res://asset TA/placeholders/buttons/quit_pressed.png" id="11_krmfv"]
+[ext_resource type="Texture2D" uid="uid://8lmlxnpaigoi" path="res://sprites/main_ui/continue.png" id="4_jltd7"]
+[ext_resource type="Texture2D" uid="uid://cf23d3p64seqg" path="res://sprites/main_ui/new_game-hover.png" id="4_te4rr"]
+[ext_resource type="Texture2D" uid="uid://dqy1j4l7jmxj2" path="res://sprites/main_ui/spacer.png" id="5_pdlxy"]
+[ext_resource type="Texture2D" uid="uid://bidkgcijy8sm5" path="res://sprites/main_ui/settings.png" id="6_jateb"]
+[ext_resource type="Texture2D" uid="uid://dtld23h0w0cs5" path="res://sprites/main_ui/continue-invert.png" id="6_jsy82"]
+[ext_resource type="Texture2D" uid="uid://whyngh8hnlfo" path="res://sprites/main_ui/exit.png" id="7_itu7i"]
+[ext_resource type="Texture2D" uid="uid://53m51m2fwkhl" path="res://sprites/main_ui/continue-hover.png" id="7_w1aet"]
+[ext_resource type="Texture2D" uid="uid://cmw42ypumthvb" path="res://sprites/main_ui/settings-invert.png" id="10_ckgtd"]
+[ext_resource type="Texture2D" uid="uid://dexvy13mnbyxd" path="res://sprites/main_ui/settings-hover.png" id="11_krmfv"]
+[ext_resource type="Texture2D" uid="uid://cmb0fwltq1vko" path="res://sprites/main_ui/exit-invert.png" id="13_0erwc"]
+[ext_resource type="Texture2D" uid="uid://dk2m1r7qistmn" path="res://sprites/main_ui/exit-hover.png" id="14_mdjrv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6revv"]
 atlas = ExtResource("2_itu7i")
@@ -160,9 +165,9 @@ animation = &"open"
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1579537399]
 layout_mode = 0
-offset_left = 166.0
+offset_left = 193.0
 offset_top = 415.0
-offset_right = 349.0
+offset_right = 376.0
 offset_bottom = 458.0
 scale = Vector2(2, 2)
 
@@ -173,31 +178,46 @@ alignment = 1
 [node name="New Game" type="TextureButton" parent="MarginContainer2/VBoxContainer" unique_id=49514121]
 layout_mode = 2
 texture_normal = ExtResource("3_jateb")
+texture_hover = ExtResource("4_te4rr")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2122388409]
 layout_mode = 0
-offset_left = 139.0
-offset_top = 297.0
-offset_right = 555.0
-offset_bottom = 349.0
+offset_left = 171.0
+offset_top = 313.0
+offset_right = 398.0
+offset_bottom = 335.0
+scale = Vector2(2, 2)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1580466485]
 layout_mode = 2
 
 [node name="Continue" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=760261488]
 layout_mode = 2
-texture_normal = ExtResource("6_xtfuj")
-texture_pressed = ExtResource("7_te4rr")
+texture_normal = ExtResource("4_jltd7")
+texture_pressed = ExtResource("6_jsy82")
+texture_hover = ExtResource("7_w1aet")
+
+[node name="spacer2" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=19719849]
+layout_mode = 2
+texture = ExtResource("5_pdlxy")
+stretch_mode = 2
 
 [node name="Settings" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=1441049509]
 layout_mode = 2
-texture_normal = ExtResource("8_jsy82")
-texture_pressed = ExtResource("9_w1aet")
+texture_normal = ExtResource("6_jateb")
+texture_pressed = ExtResource("10_ckgtd")
+texture_hover = ExtResource("11_krmfv")
+
+[node name="spacer" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=2023832436]
+layout_mode = 2
+texture = ExtResource("5_pdlxy")
+stretch_mode = 2
 
 [node name="Exit" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=31373487]
 layout_mode = 2
-texture_normal = ExtResource("10_ckgtd")
-texture_pressed = ExtResource("11_krmfv")
+texture_normal = ExtResource("7_itu7i")
+texture_pressed = ExtResource("13_0erwc")
+texture_hover = ExtResource("14_mdjrv")
 
 [node name="Transition" type="AnimationPlayer" parent="." unique_id=1703144559]
 libraries/ = SubResource("AnimationLibrary_itu7i")
