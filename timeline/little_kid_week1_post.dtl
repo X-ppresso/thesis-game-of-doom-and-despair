@@ -1,0 +1,11 @@
+[style name="bwuh"]
+MC (neutral): And done! Here you go.
+LK (happy): It... it's back to normal... Thank you... mister!
+MC (neutral): If you really wanted to play that game, you should ask your parents and save up money for a better machine.
+MC (neutral): A lot of these videos online are often unhelpful, and some are bad people trying to hack you.
+LK (sad): ?!
+MC (neutral): You got lucky this time, but if you keep doing these things, you might run into a bigger problem.
+LK (smile): Okay! I won't do it again...
+MC (smile): As long as you understand. You should go back home now.
+LK (happy): Bye-bye, Mister!
+[signal arg="client_complete"]

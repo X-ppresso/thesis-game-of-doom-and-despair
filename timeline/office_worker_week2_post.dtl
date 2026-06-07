@@ -1,0 +1,14 @@
+[style name="bwuh"]
+OW (neutral): Is it done?
+MC (smile): Yep! It should be good to go.
+OW (smile): Amazing.. You fixed it efficiently and even recovered my work. I had my doubts since this is a new place, but it seems my worry was unfounded.
+MC (happy): hehe~ thank you.
+MC (neutral): Ah- but next time, please don't install "cleaner" applications that you see from advertisements.
+MC (neutral): More often than not, they are malicious apps that will give you ads and lead you to scam sites.
+MC (neutral): And remember to back up your data for cases like these. For starters, you can use the 3-2-1 principle.
+OW (neutral): 3-2-1?
+MC (smile): That's right! 3 copies of your data, in 2 different mediums, and 1 of them stored off-site!
+OW (smile): I see. Thank you, I will keep that in mind.
+OW (neutral): I'll leave now, thank you for helping me in your off-hours.
+MC (smile): No problem at all.
+[signal arg="client_complete"]

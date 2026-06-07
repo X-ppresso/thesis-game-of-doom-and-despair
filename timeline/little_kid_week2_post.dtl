@@ -1,0 +1,15 @@
+[style name="bwuh"]
+MC (smile): All clear!
+LK (happy): Thank you so much, mister!
+MC (neutral): You need to be more careful when downloading things from the internet, especially when it comes to pirating games or other things.
+MC (neutral_closed): ...Not that I condone piracy.
+MC (neutral): What *was* the game anyway?
+LK (happy): It's called "Dreamhunters"!
+MC (neutral_closed): (I definitely have heard about this game before...)
+MC (neutral): (hmmm...?)
+MC (neutral_closed): But isn't that game free? Why'd you try to pirate it?
+LK (neutral): ...Really?
+MC (frown): You... didn't check?
+LK (sad): ...
+MC (neutral_closed): (...with a defeated look on his face, he leaves some money on the counter and slowly walks out.)
+[signal arg="client_complete"]

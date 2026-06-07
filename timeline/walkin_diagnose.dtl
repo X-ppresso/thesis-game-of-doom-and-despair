@@ -1,0 +1,34 @@
+[style name="bwuh"]
+MC (neutral): So, what seems to be the problem?
+Random1: {Global.fc_problem}
+MC (neutral): {Global.fc_cause_q}
+Random1: {Global.fc_cause}
+label diagnose_choice
+MC (neutral_closed): (Based on what they said, the problem must be...)
+- Malware
+	if {Global.fc_answer} == 0:
+		jump diagnose_correct
+	jump diagnose_wrong
+- Bloatware
+	if {Global.fc_answer} == 1:
+		jump diagnose_correct
+	jump diagnose_wrong
+- System Failure
+	if {Global.fc_answer} == 2:
+		jump diagnose_correct
+	jump diagnose_wrong
+label diagnose_wrong
+MC (frown): (wait, that isn't quite right...)
+set {Global.current_day_score} -= 20
+[signal arg="wrong_diagnosis"]
+if {Global.current_day_score} <= 0:
+	jump diagnose_failed
+jump diagnose_choice
+label diagnose_failed
+Random1: {Global.fc_leave}
+[signal arg="day_failed"]
+jump timeline_end
+label diagnose_correct
+MC (smile): Alright, I know what to do. Give me a moment.
+[signal arg="start_minigames"]
+label timeline_end

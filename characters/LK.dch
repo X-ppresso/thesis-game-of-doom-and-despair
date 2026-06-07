@@ -1,0 +1,67 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.7, 0.9, 0.6, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "bwuh",
+"suffix": ""
+},
+&"default_portrait": "neutral",
+&"description": "The Little Kid. Quiet boy who loves video games a bit too much.",
+&"display_name": "",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"frown": {
+"export_overrides": {
+"image": "\"res://sprites/character portraits/little_boy/face_lk_frown.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 2.5,
+"scene": ""
+},
+"happy": {
+"export_overrides": {
+"image": "\"res://sprites/character portraits/little_boy/face_lk_happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 2.5,
+"scene": ""
+},
+"neutral": {
+"export_overrides": {
+"image": "\"res://sprites/character portraits/little_boy/face_lk_neutral.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 2.5,
+"scene": ""
+},
+"sad": {
+"export_overrides": {
+"image": "\"res://sprites/character portraits/little_boy/face_lk_sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 2.5,
+"scene": ""
+},
+"smile": {
+"export_overrides": {
+"image": "\"res://sprites/character portraits/little_boy/face_lk_smile.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 2.5,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

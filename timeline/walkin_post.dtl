@@ -1,0 +1,4 @@
+[style name="bwuh"]
+MC (smile): All done! Good as new.
+Random1: {Global.fc_success}
+[signal arg="client_complete"]

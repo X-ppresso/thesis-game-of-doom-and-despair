@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdayrunner00a"]
+
+[ext_resource type="Texture2D" uid="uid://yfdfnjxwtulo" path="res://sprites/main_ui/gameplay/background.png" id="1_bg"]
+[ext_resource type="Script" path="res://Scenes/stage/day.gd" id="2_script"]
+[ext_resource type="PackedScene" uid="uid://coinjd5byry8i" path="res://Scenes/Characters/mc.tscn" id="3_mc"]
+[ext_resource type="Texture2D" uid="uid://mwqin0m07cmo" path="res://sprites/main_ui/gameplay/counter.png" id="4_counter"]
+
+[node name="Day" type="Node2D"]
+script = ExtResource("2_script")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_right = 641.0
+offset_bottom = 360.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_bg")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 989.0
+offset_top = 168.0
+offset_right = 1044.0
+offset_bottom = 296.0
+scale = Vector2(4, 4)
+texture = ExtResource("4_counter")
+
+[node name="MC" parent="." instance=ExtResource("3_mc")]
+position = Vector2(1142, 408)
+scale = Vector2(5, 5)
+
+[node name="Characters" type="Node2D" parent="."]

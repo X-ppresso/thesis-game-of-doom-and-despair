@@ -6,4 +6,4 @@ MC: Ah- wait, please be careful next time!
 leave HG
 MC: ...and she's gone.
 MC: (will she really be okay..?)
-[signal arg="day_complete"]
+[signal arg="client_complete"]

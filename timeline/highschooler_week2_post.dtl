@@ -1,0 +1,17 @@
+[style name="bwuh"]
+MC (neutral_closed): Phew. That took longer than expected.
+MC (smile): Here you go!
+HG2 (happy): Thank goodness...
+MC (neutral): And this time, before you run off again..
+HG (neutral): eh?
+MC (neutral): Please be careful when talking to people online.
+MC (neutral): Before clicking links, you should always check for misspellings, and don't download from sources you don't already know.
+MC (neutral): And if something sounds too good to be true, it usually is. So be extra vigilant when it comes to these kinds of things.
+HG (neutral_closed): (he's still going...)
+MC (neutral): And one last thing- there's a good chance the malware had access to your accounts, so you two should change your passwords as soon as possible.
+HG2 (smile): ah... actually, I helped her change hers after she told me about what happened.
+HG (happy): That's right! She understands these kinds of things better than me!
+MC (smile): oh, that's great! It's very reassuring to know she has a friend like you.
+MC (neutral): Then I trust you to take care of your own accounts, too.
+HG2 (closed): ah- t-thank you...
+[signal arg="client_complete"]

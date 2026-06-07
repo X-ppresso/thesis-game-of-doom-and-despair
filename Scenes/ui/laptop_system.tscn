@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://claptopsys0a"]
+
+[ext_resource type="Script" path="res://Scripts/device_system.gd" id="0_script"]
+[ext_resource type="Texture2D" uid="uid://3ehrgywgnco1" path="res://sprites/main_ui/gameplay/devices/laptop.png" id="1_lap"]
+[ext_resource type="Texture2D" uid="uid://whs7i7i53a4n" path="res://sprites/main_ui/gameplay/devices/laptop_system.png" id="2_sys"]
+[ext_resource type="Texture2D" uid="uid://bi70oop8ncloj" path="res://sprites/main_ui/gameplay/minigame assets/system_button.png" id="3_btn"]
+[ext_resource type="Texture2D" uid="uid://byndt1qdcmuy5" path="res://sprites/main_ui/gameplay/minigame assets/system_button_pressed.png" id="4_btnp"]
+
+[node name="LaptopSystem" type="Node2D"]
+script = ExtResource("0_script")
+
+[node name="Frame" type="Node2D" parent="."]
+position = Vector2(150, 36)
+scale = Vector2(1.8, 1.8)
+
+[node name="laptop" type="TextureRect" parent="Frame"]
+offset_left = -27.0
+offset_top = 36.0
+offset_right = 235.0
+offset_bottom = 208.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_lap")
+
+[node name="Systembg" type="TextureRect" parent="Frame"]
+offset_left = 21.0
+offset_top = 46.0
+offset_right = 235.0
+offset_bottom = 178.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_sys")
+
+[node name="system_button" type="TextureButton" parent="Frame"]
+offset_left = 152.0
+offset_top = 232.0
+offset_right = 220.0
+offset_bottom = 247.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_btn")
+texture_pressed = ExtResource("4_btnp")
+texture_hover = ExtResource("3_btn")

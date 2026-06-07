@@ -1,0 +1,81 @@
+[style name="bwuh"]
+MC (neutral): There we are, all set and ready for customers.
+MC (neutral_closed): Now I can relax a little...
+[style name="no_portrait"]
+...[pause=0.3][b]The doorbell jingles.[/b]
+[style name="bwuh"]
+MC (smile): Oh, that was quick.
+MC (neutral): Welcome, how can I... Huh?
+MC (neutral): (I could've sworn I heard the door open, but I don't see anyon-)
+[style name="no_portrait"]
+[b]Mister...[/b]
+[style name="bwuh"]
+MC (shock): Eek!!!!!!
+[style name="no_portrait"]
+I'm down here.
+[style name="bwuh"]
+MC (neutral_closed): ...... oh.
+MC (neutral): (It's just a kid...)
+MC (sad): Goodness, I didn't see you at all! I'm sooo sorry.
+MC (neutral): How can I help you?
+LK (sad): My laptop.. It's broken..
+MC (neutral): Hmmm, let me see...
+label diagnose_intro
+- What happened?
+	MC: Which part of it is "broken"?
+	LK (sad): Sometimes it turns off on its own, and the fans have gotten really loud...
+	LK (frown): I'm too scared to play any games on it.
+	MC (neutral): Is that so...
+	LK (sad): Can you fix it, mister?
+- How did this happen?
+	MC (neutral): (I should hear what's actually wrong first.)
+	jump diagnose_intro
+MC (neutral_closed): hmm...
+- How did this happen?
+	MC (neutral): When did it start being like this? Did you do anything in particular?
+	LK (sad): uhm... I...
+	LK (sad): ...
+	MC (neutral): ..?
+	LK (sad): ...I'm sorry... it started being like that when I wanted to play a game, but it was really slow...
+	LK (frown): Then I looked up how to make it faster... and followed a tutorial...
+	MC (neutral): What did the tutorial say?
+	LK (sad): I don't remember...
+	MC (shock): Huh?
+	LK (sad): I went and changed some settings but I can't remember what I changed...
+	LK (frown): I tried to fix it myself but I couldn't...
+	MC (smile): Hey, it's okay. Please don't cry...
+	MC (smile): I'll fix it for you, so cheer up!
+	LK (happy): ...really? Thank you, mister...
+label diagnose_choice
+MC: (From what he said, the problem would be...)
+- System Failure
+	jump diagnose_correct
+- Malware
+	MC (frown): (wait, that can't be it...)
+	LK (sad): Mister..?
+	set {Global.current_day_score} -= 20
+	[signal arg="wrong_diagnosis"]
+	if {Global.current_day_score} <= 0:
+		jump diagnose_failed
+	jump diagnose_choice
+- Bloatware
+	MC (frown): (wait, that can't be it...)
+	LK (frown): Mister..?
+	set {Global.current_day_score} -= 20
+	[signal arg="wrong_diagnosis"]
+	if {Global.current_day_score} <= 0:
+		jump diagnose_failed
+	jump diagnose_choice
+label diagnose_failed
+LK (sad): Mister... it's getting late... I have to go back. Can I have my laptop back?
+MC (sad): Right... I'm sorry.
+leave LK
+[signal arg="day_failed"]
+jump timeline_end
+label diagnose_correct
+MC (neutral): Don't worry, all we have to do is undo the changes you made before it started having problems.
+MC (smile): Just wait a little bit, alright?
+LK (neutral): Okay.
+MC (neutral): (Alright, should be easy enough.)
+[signal arg="start_minigames"]
+label timeline_end

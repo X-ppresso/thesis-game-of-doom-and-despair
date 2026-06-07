@@ -1,0 +1,67 @@
+[style name="bwuh"]
+MC (neutral): I wonder who'll come in today~
+[style name="no_portrait"]
+...[pause=0.3][b]The doorbell jingles.[/b]
+[style name="bwuh"]
+MC (smile): Right on cue-
+MC (neutral): ...?
+MC (neutral_closed): ...
+MC (neutral): [i]*peeks down*[/i]
+MC (happy): There you are!
+MC (neutral_closed): (Not gonna fall for the same trick twice!)
+LK (neutral): Good morning...
+MC (smile): Welcome. Did something happen to your laptop again?
+LK (sad): Yeah...
+label diagnose_intro
+- What happened to it?
+	MC: What happened to it?
+	LK (frown): It's hot and the fans are loud again... and there's so much...
+	MC (neutral): ?? So much of what?
+	LK (sad): ads... and pop-ups...
+- Did you do something to it?
+	MC (neutral): (Let me hear what's wrong first.)
+	jump diagnose_intro
+MC (neutral): Do you know how this happened?
+LK (sad): I think it was the game...
+MC (neutral): What game was it?
+LK (sad): It was the new game that got really popular... every single one of my friends got it, and I wanted to play with them...
+MC (neutral): So it turned out like this after you installed it?
+LK (sad): Yeah...
+MC (neutral_closed): Hmm... Where did you get your copy of the game?
+LK (sad): It was a website...
+MC (neutral): Official website?
+LK (sad): ...
+LK (sad): No....
+LK (frown): I can't buy the game... so I-
+MC (smile): Alright. I get it. You don't have to tell me.
+label diagnose_choice
+MC: (It's definitely...)
+- Malware
+	jump diagnose_correct
+- Bloatware
+	MC (frown): (wait, is it?...)
+	LK (sad): Mister..?
+	set {Global.current_day_score} -= 20
+	[signal arg="wrong_diagnosis"]
+	if {Global.current_day_score} <= 0:
+		jump diagnose_failed
+	jump diagnose_choice
+- System Failure
+	MC (frown): (wait, is it?...)
+	LK (sad): Mister..?
+	set {Global.current_day_score} -= 20
+	[signal arg="wrong_diagnosis"]
+	if {Global.current_day_score} <= 0:
+		jump diagnose_failed
+	jump diagnose_choice
+label diagnose_failed
+LK (sad): Mister, I need to go now...
+MC (sad): (I'm not quite myself today...)
+[signal arg="day_failed"]
+jump timeline_end
+label diagnose_correct
+MC (neutral): You were right, the "game" you downloaded is most likely the culprit.
+MC (smile): Well, I'll get rid of it for you.
+LK (neutral): Okay.
+[signal arg="start_minigames"]
+label timeline_end

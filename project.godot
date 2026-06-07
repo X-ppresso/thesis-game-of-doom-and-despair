@@ -30,13 +30,26 @@ SettingsManager="*res://Scripts/settings_manager.gd"
 
 directories/dch_directory={
 "HG": "res://characters/HG.dch",
+"HG2": "res://characters/HG2.dch",
+"LK": "res://characters/LK.dch",
 "MC": "res://characters/MC.dch",
+"OW": "res://characters/OW.dch",
 "Random1": "res://characters/Random1.dch"
 }
 directories/dtl_directory={
 "highschooler_week1": "res://timeline/highschooler_week1.dtl",
 "highschooler_week1_post": "res://timeline/highschooler_week1_post.dtl",
-"test": "res://timeline/test.dtl"
+"highschooler_week2": "res://timeline/highschooler_week2.dtl",
+"highschooler_week2_post": "res://timeline/highschooler_week2_post.dtl",
+"little_kid_week1": "res://timeline/little_kid_week1.dtl",
+"little_kid_week1_post": "res://timeline/little_kid_week1_post.dtl",
+"little_kid_week2": "res://timeline/little_kid_week2.dtl",
+"little_kid_week2_post": "res://timeline/little_kid_week2_post.dtl",
+"office_worker_week2": "res://timeline/office_worker_week2.dtl",
+"office_worker_week2_post": "res://timeline/office_worker_week2_post.dtl",
+"test": "res://timeline/test.dtl",
+"walkin_diagnose": "res://timeline/walkin_diagnose.dtl",
+"walkin_post": "res://timeline/walkin_post.dtl"
 }
 layout/style_directory={
 "bwuh": "res://dialogic customs/bwuh.tres",

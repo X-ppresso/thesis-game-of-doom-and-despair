@@ -85,5 +85,5 @@ HG (shock): What? NO!! Please, anything but that! I really need my school notes.
 MC (neutral): Luckily, I have a tool I've been developing for this exact situation.
 MC (smile): Don't worry, I'll make sure you can access your notes again.
 HG (neutral): Really?! Please make it work!
-[signal arg="start_malware_puzzle"]
+[signal arg="start_minigames"]
 label timeline_end

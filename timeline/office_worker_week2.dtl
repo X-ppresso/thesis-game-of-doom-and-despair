@@ -1,0 +1,62 @@
+[style name="bwuh"]
+MC (neutral): Alright! Yet another good day.
+MC (neutral_closed): I should prepare to close for today...
+[style name="no_portrait"]
+...[pause=0.3][b]The doorbell rings.[/b]
+[style name="bwuh"]
+OW (neutral): Hello, is this the computer repair shop?
+OW (sad): I'm sorry for coming in at such a late hour, I just got off work and this is the only time I have to come here...
+MC (smile): Oh, that's alright. Thank you for coming.
+MC (neutral_closed): (there goes my free time...)
+MC (neutral): (but this man seems really tired, I should help him out)
+OW (neutral): There seems to be a problem with my work laptop.
+label diagnose_intro
+- What's the issue?
+	MC: What's the issue?
+	OW (frown): Lately... whenever I try to get some work done on my laptop, I keep finding myself swamped by these notifications and ads.
+	OW (sad): It has gotten so bad that I can't get anything done nowadays. That's when I overheard my co-workers talking about this place.
+	MC (smile): Well, you're at the right place. I can get rid of those for you.
+	OW (neutral): You have my utmost gratitude.
+- Let me think for a moment.
+	MC (neutral): (Let me hear him out first.)
+	jump diagnose_intro
+MC (neutral): Do you remember doing anything before this started? Like installing something?
+OW (neutral): Hmm, let's see... there was a program that I had to install for work.
+OW (neutral): After I started using it, I noticed a decrease in my laptop performance.
+OW (frown): But I didn't think much of it, until there was an advertisement for a program that cleans the computer and makes it run faster.
+OW (sad): I thought it'd be helpful, but it only got worse from then...
+OW (sad): To top it off, the program deleted important work data.
+MC (frown): That's awful! I'm sorry that happened to you.
+label diagnose_choice
+MC: (I see now, the problem is...)
+- Bloatware
+	jump diagnose_correct
+- Malware
+	MC (frown): (wait, that isn't quite right...)
+	OW (neutral): Is there something wrong?
+	set {Global.current_day_score} -= 20
+	[signal arg="wrong_diagnosis"]
+	if {Global.current_day_score} <= 0:
+		jump diagnose_failed
+	jump diagnose_choice
+- System Failure
+	MC (frown): (wait, that isn't quite right...)
+	OW (neutral): Is there something wrong?
+	set {Global.current_day_score} -= 20
+	[signal arg="wrong_diagnosis"]
+	if {Global.current_day_score} <= 0:
+		jump diagnose_failed
+	jump diagnose_choice
+label diagnose_failed
+OW (frown): Are you not finished yet? I'm sorry, but unfortunately, I need to hurry home.
+OW (neutral): I may return another time.
+[signal arg="day_failed"]
+jump timeline_end
+label diagnose_correct
+MC (neutral_closed): (The initial work program's installer must've had those extra useless startup programs bundled in.)
+MC (neutral_closed): (And those "cleaning tools"... those are adware...)
+MC (frown): (Forget cleaning- these apps are making it worse...)
+MC (neutral): Alright. First I'll remove the bloat, then I'll see if I can recover that data you mentioned.
+OW (neutral): That puts me at ease, thank you.
+[signal arg="start_minigames"]
+label timeline_end
