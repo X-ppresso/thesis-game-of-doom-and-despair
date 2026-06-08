@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://cscoretally00a"]
+
+[ext_resource type="Script" path="res://Scripts/score_tally.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dr0qn75mnijfs" path="res://sprites/main_ui/level selector/menu_level_bg.png" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://dpcsis6xf5a0k" path="res://sprites/main_ui/level selector/counter.png" id="3_counter"]
+[ext_resource type="Texture2D" uid="uid://ddcvug6ojkgam" path="res://sprites/main_ui/level selector/score_box.png" id="4_box"]
+[ext_resource type="FontFile" uid="uid://vdxirvxxy78r" path="res://fonts/m6x11.ttf" id="5_font"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_num"]
+font = ExtResource("5_font")
+font_size = 64
+font_color = Color(1, 1, 1, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hint"]
+font = ExtResource("5_font")
+font_size = 28
+font_color = Color(1, 1, 1, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="ScoreTally" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_script")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("2_bg")
+
+[node name="counter" type="TextureRect" parent="."]
+offset_top = 264.0
+offset_right = 640.0
+offset_bottom = 508.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_counter")
+
+[node name="ScoreBox" type="TextureRect" parent="."]
+offset_left = 30.0
+offset_top = 84.0
+offset_right = 440.0
+offset_bottom = 384.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_box")
+
+[node name="mc" type="AnimatedSprite2D" parent="."]
+position = Vector2(984, 258)
+scale = Vector2(2, 2)
+
+[node name="Number" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 300.0
+offset_right = 850.0
+offset_bottom = 470.0
+horizontal_alignment = 1
+vertical_alignment = 1
+text = "0 / 0"
+label_settings = SubResource("LabelSettings_num")
+
+[node name="Hint" type="Label" parent="."]
+offset_top = 662.0
+offset_right = 1280.0
+offset_bottom = 710.0
+horizontal_alignment = 1
+text = "Click to continue"
+label_settings = SubResource("LabelSettings_hint")

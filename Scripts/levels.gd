@@ -35,6 +35,7 @@ const COLOR_LOCKED := Color(0.3, 0.3, 0.36)
 @onready var transition: AnimationPlayer = $Transition
 @onready var week1_button: TextureButton = get_node("weeks/HBoxContainer/1")
 @onready var week2_button: TextureButton = get_node("weeks/HBoxContainer/2")
+@onready var mc: AnimatedSprite2D = $mc
 
 var is_playing := false
 var _target_scene := ""
@@ -54,6 +55,7 @@ func _ready() -> void:
 	move_child($Transition, get_child_count() - 1)
 	_current_week = SaveManager.get_current().x
 	_show_week(_current_week)
+	mc.play("default")               # idle/blink loop on entry
 	transition.play("fade_in")
 
 
@@ -230,6 +232,7 @@ func _on_start_pressed() -> void:
 	var scene := SaveManager.get_day_scene(_current_week, _selected_day)
 	if scene == "":
 		return
+	mc.play("start")                 # MC perks up as the day launches
 	SaveManager.set_current(_current_week, _selected_day)
 	_go_to(scene)
 

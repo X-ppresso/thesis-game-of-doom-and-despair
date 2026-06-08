@@ -275,10 +275,12 @@ const PROBLEM_GAMES := {
 	"system": "system",
 }
 
-## Per-week money quota target (from the GDD).
+## Per-week score quota the player must reach for a "cleared" week (shown on the
+## score-tally screen). On the 0-100-per-day scale, a perfect week tops out at
+## DAYS_PER_WEEK * Global.DAY_MAX_SCORE = 500; week 2 sets a higher bar than week 1.
 const WEEK_QUOTAS := {
-	1: 50000,
-	2: 200000,
+	1: 350,
+	2: 400,
 }
 
 var data: Dictionary = {}

@@ -52,12 +52,13 @@ directories/dtl_directory={
 "walkin_post": "res://timeline/walkin_post.dtl"
 }
 layout/style_directory={
+"": "res://dialogic customs/bwuh.tres",
 "bwuh": "res://dialogic customs/bwuh.tres",
 "no_portrait": "res://dialogic customs/no_portrait.tres"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogic customs/bwuh.tres", "res://dialogic customs/no_portrait.tres"]
-layout/default_style="res://dialogic styles/bwuh.tres"
+layout/default_style="res://dialogic customs/bwuh.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.03

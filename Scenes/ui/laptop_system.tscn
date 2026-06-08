@@ -8,6 +8,8 @@
 
 [node name="LaptopSystem" type="Node2D"]
 script = ExtResource("0_script")
+pane_fract = Rect2(0.1, 0.24, 0.8, 0.52)
+vertical = true
 
 [node name="Frame" type="Node2D" parent="."]
 position = Vector2(150, 36)
@@ -30,11 +32,8 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_sys")
 
 [node name="system_button" type="TextureButton" parent="Frame"]
-offset_left = 152.0
-offset_top = 232.0
-offset_right = 220.0
-offset_bottom = 247.0
-scale = Vector2(2, 2)
+offset_right = 68.0
+offset_bottom = 15.0
 texture_normal = ExtResource("3_btn")
 texture_pressed = ExtResource("4_btnp")
 texture_hover = ExtResource("3_btn")

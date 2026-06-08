@@ -2,23 +2,27 @@ extends Node2D
 
 ## The system-failure minigame presented inside a device (laptop or phone) that
 ## slides up from the bottom of the screen — the mirror of device_malware /
-## device_bloat. The device frame shows the system screen art; the REVERT button
-## baked into the device drives the timing puzzle (SystemPuzzle.hit()).
+## device_bloat. The device's screen art already carries the title ("Reverting..."
+## / "Recovering...") and divider; this only draws the timing bars in the area
+## below it and a REVERT button along the bottom of the screen.
 ##
-## The puzzle's lane area is derived at runtime from the screen's actual on-screen
-## rect (pane_fract), so it auto-fits any device shape/scale. Laptop vs phone
-## differ only in the exported knobs below + the cloned art, so both share this
-## one script.
+## The lane area + button are derived at runtime from the screen's on-screen rect
+## (pane_fract / button fracts), so they auto-fit any device shape/scale. Laptop
+## vs phone differ only in `vertical` + the cloned art, so both share this script.
 
 signal puzzle_complete()
 
 const SYSTEM := preload("res://Scenes/puzzle/system_puzzle/system.tscn")
-const UI_FONT := preload("res://fonts/m3x6.ttf")
-const UI_FONT_SIZE := 32
 
-## Lane area inside the screen texture, as fractions of the screen's rect.
-## Default = laptop (clear of the title labels on top and the hint at the bottom).
-@export var pane_fract: Rect2 = Rect2(0.12, 0.22, 0.76, 0.56)
+## Lane area inside the screen, as fractions of the screen's rect (clear of the
+## baked title at the top and the button along the bottom).
+@export var pane_fract: Rect2 = Rect2(0.08, 0.22, 0.84, 0.56)
+## false = horizontal bars (phone); true = vertical bars (laptop).
+@export var vertical: bool = false
+## Button placement: centre as a fraction of the screen rect, width as a fraction
+## of the screen width.
+@export var button_center_fract: Vector2 = Vector2(0.5, 0.9)
+@export var button_width_fract: float = 0.82
 
 @export var slide_time: float = 0.6
 @export var slide_distance: float = 780.0   # how far below the rest position it starts
@@ -44,12 +48,13 @@ func _ready() -> void:
 
 func _start_puzzle() -> void:
 	_puzzle = SYSTEM.instantiate() as SystemPuzzle
+	_puzzle.vertical = vertical
 	_puzzle.play_rect = _content_pane()
 	_apply_difficulty()
 	add_child(_puzzle)
 	_puzzle.puzzle_complete.connect(_on_inner_complete)
+	_place_button()
 	button.pressed.connect(_puzzle.hit)
-	_layout_ui()
 
 
 # Applies the per-day difficulty to the puzzle; missing keys keep scene defaults.
@@ -73,41 +78,22 @@ func _content_pane() -> Rect2:
 		pane_fract.size.y * gr.size.y)
 
 
-# Score + "Reverts left" in the title bar (stacked on a narrow phone screen),
-# hint along the bottom. Mirrors device_malware._layout_ui.
-func _layout_ui() -> void:
+# Stretches the REVERT button across the bottom of the screen. The button lives
+# under Frame (a scaled Node2D), so we divide out the frame's global scale to hit
+# the wanted on-screen size.
+func _place_button() -> void:
 	var sr := screen.get_global_rect()
-	var bar_top := sr.position.y + 3.0
-	var bar_h := 28.0
-	var score := _puzzle.get_node("UI/ScoreLabel") as Label
-	var prog := _puzzle.get_node("UI/ProgressLabel") as Label
-	var hint := _puzzle.get_node("UI/HintLabel") as Label
-	for label: Label in [score, prog]:
-		var settings: LabelSettings = label.label_settings.duplicate() if label.label_settings else LabelSettings.new()
-		settings.font = UI_FONT
-		settings.font_size = UI_FONT_SIZE
-		label.label_settings = settings
-	var prog_w := UI_FONT.get_string_size(prog.text, HORIZONTAL_ALIGNMENT_LEFT, -1, UI_FONT_SIZE).x + 16.0
-	var score_w := UI_FONT.get_string_size(score.text, HORIZONTAL_ALIGNMENT_LEFT, -1, UI_FONT_SIZE).x + 16.0
-	if score_w + prog_w + 40.0 > sr.size.x:
-		_place(score, sr.position.x + 12.0, bar_top, sr.size.x - 24.0, bar_h, HORIZONTAL_ALIGNMENT_LEFT)
-		_place(prog, sr.position.x + 12.0, bar_top + bar_h, sr.size.x - 24.0, bar_h, HORIZONTAL_ALIGNMENT_RIGHT)
-	else:
-		var prog_x := sr.end.x - 16.0 - prog_w
-		var score_x := prog_x - 24.0 - score_w
-		_place(score, score_x, bar_top, score_w, bar_h, HORIZONTAL_ALIGNMENT_LEFT)
-		_place(prog, prog_x, bar_top, prog_w, bar_h, HORIZONTAL_ALIGNMENT_LEFT)
-	# Hint along the bottom of the screen, clear of the bars.
-	hint.autowrap_mode = TextServer.AUTOWRAP_WORD
-	_place(hint, sr.position.x + 12.0, sr.end.y - 52.0, sr.size.x - 24.0, 46.0, HORIZONTAL_ALIGNMENT_CENTER)
-
-
-func _place(label: Label, x: float, y: float, w: float, h: float, align: int) -> void:
-	label.offset_left = x
-	label.offset_top = y
-	label.offset_right = x + w
-	label.offset_bottom = y + h
-	label.horizontal_alignment = align
+	var tex := button.texture_normal
+	if tex == null:
+		return
+	var fscale: float = frame.get_global_transform().get_scale().x
+	if fscale == 0.0:
+		fscale = 1.0
+	var s := (sr.size.x * button_width_fract) / (tex.get_width() * fscale)
+	button.scale = Vector2(s, s)
+	var rendered := tex.get_size() * s * fscale   # actual on-screen size
+	var center := sr.position + Vector2(button_center_fract.x * sr.size.x, button_center_fract.y * sr.size.y)
+	button.global_position = center - rendered * 0.5
 
 
 func _on_inner_complete() -> void:

@@ -8,7 +8,8 @@
 
 [node name="PhoneSystem" type="Node2D"]
 script = ExtResource("0_script")
-pane_fract = Rect2(0.08, 0.2, 0.84, 0.46)
+pane_fract = Rect2(0.08, 0.17, 0.84, 0.58)
+vertical = false
 
 [node name="Frame" type="Node2D" parent="."]
 position = Vector2(482, 155)
@@ -29,11 +30,8 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_sys")
 
 [node name="system_button" type="TextureButton" parent="Frame"]
-offset_left = 20.0
-offset_top = 200.0
-offset_right = 88.0
-offset_bottom = 215.0
-scale = Vector2(2, 2)
+offset_right = 68.0
+offset_bottom = 15.0
 texture_normal = ExtResource("3_btn")
 texture_pressed = ExtResource("4_btnp")
 texture_hover = ExtResource("3_btn")

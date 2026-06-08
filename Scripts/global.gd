@@ -6,11 +6,14 @@ const WRONG_DIAGNOSIS_PENALTY := 20
 var week1_payment := 0
 var week2_payment := 0
 
-var week1_quota := 50000
-var week2_quota := 200000
+var week1_quota := 350
+var week2_quota := 400
 
 var current_day_score := DAY_MAX_SCORE
 var current_day_failed := false
+
+## The week whose Friday was just cleared, handed to the score-tally screen.
+var last_completed_week := 1
 
 # --- faceless walk-in diagnosis (declared so Dialogic can interpolate them as
 # {Global.fc_*} in the shared walkin_diagnose / walkin_post timelines). The day
