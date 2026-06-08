@@ -162,7 +162,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sufls")
 }, {
-"duration": 60.0,
+"duration": 40.0,
 "texture": SubResource("AtlasTexture_sufls")
 }, {
 "duration": 1.0,
@@ -366,9 +366,6 @@ sprite_frames = SubResource("SpriteFrames_bxqhs")
 position = Vector2(984, 258)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tr2mt")
-animation = &"clear"
-frame = 6
-frame_progress = 1.0
 
 [node name="counter" type="TextureRect" parent="." unique_id=1659441869]
 layout_mode = 0
