@@ -41,14 +41,18 @@ var is_playing := false
 var _target_scene := ""
 var _current_week := 1
 var _selected_day := 0          # 1..5, or 0 when nothing is selected
-var _rows: Array = []           # one dict per row: {button, box, outer, arrow, label, day}
+var _rows: Array = []           # one dict per row: {button, box, outer, arrow, label, day, arrow_base_x}
 var _start_button: TextureButton
 var _selected_label: Label
+var _arrow_bob_time := 0.0
+const ARROW_BOB_AMPLITUDE := 4.0
+const ARROW_BOB_SPEED := 5.5
 
 
 func _ready() -> void:
 	_build_rows()
 	_build_start_button()
+	_build_secret_button()
 	week1_button.pressed.connect(_show_week.bind(1))
 	week2_button.pressed.connect(_show_week.bind(2))
 	# Keep the fade overlay (Transition/ColorRect) drawing on top of the new rows.
@@ -57,6 +61,28 @@ func _ready() -> void:
 	_show_week(_current_week)
 	mc.play("default")               # idle/blink loop on entry
 	transition.play("fade_in")
+
+func _build_secret_button() -> void:
+	var screen_size := get_viewport_rect().size
+	var secret_button := Button.new()
+	secret_button.flat = true
+	var empty := StyleBoxEmpty.new()
+	secret_button.add_theme_stylebox_override("normal", empty)
+	secret_button.add_theme_stylebox_override("hover", empty)
+	secret_button.add_theme_stylebox_override("pressed", empty)
+	secret_button.add_theme_stylebox_override("focus", empty)
+	secret_button.position = Vector2(screen_size.x - 64, 0)
+	secret_button.size = Vector2(64, 64)
+	secret_button.mouse_filter = Control.MOUSE_FILTER_STOP
+	secret_button.pressed.connect(_on_secret_button_pressed)
+	add_child(secret_button)
+
+func _on_secret_button_pressed() -> void:
+	for week in range(1, SaveManager.TOTAL_WEEKS + 1):
+		for day in range(1, SaveManager.DAYS_PER_WEEK + 1):
+			SaveManager.record_day_result(week, day, true, Global.DAY_MAX_SCORE)
+	_show_week(_current_week)
+	print("Secret perfect clear applied.")
 
 
 # ------------------------------------------------------------- build the rows
@@ -70,7 +96,7 @@ func _build_rows() -> void:
 	for i in range(TAB_CENTERS_NATIVE.size()):
 		var day := i + 1
 		var center_y: float = PANEL_ORIGIN.y + TAB_CENTERS_NATIVE[i] * PANEL_SCALE
-		var box_pos := Vector2(PANEL_ORIGIN.x + STATUS_BOX_NATIVE_X * PANEL_SCALE, center_y - box_size.y * 0.5)
+		var box_pos := Vector2(PANEL_ORIGIN.x + STATUS_BOX_NATIVE_X * PANEL_SCALE + 4.0 * PANEL_SCALE, center_y - box_size.y * 0.5)
 
 		# Invisible button covering the whole row (tab + status bar) for clicks.
 		var button := Button.new()
@@ -105,10 +131,11 @@ func _build_rows() -> void:
 		# Selection arrow on the RIGHT side of the bar, flipped to point back at it.
 		var arrow := TextureRect.new()
 		arrow.texture = TEX_ARROW
-		arrow.flip_h = true
+		arrow.flip_h = false
 		arrow.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		arrow.size = arrow_size
-		arrow.position = Vector2(box_pos.x + box_size.x + 6.0, center_y - arrow_size.y * 0.5) - button.position
+		var base_arrow_x := box_pos.x + box_size.x + 16.0
+		arrow.position = Vector2(base_arrow_x, center_y - arrow_size.y * 0.5) - button.position
 		arrow.visible = false
 		button.add_child(arrow)
 
@@ -125,15 +152,24 @@ func _build_rows() -> void:
 		button.add_child(label)
 
 		button.pressed.connect(_on_day_pressed.bind(day))
-		_rows.append({"button": button, "box": box, "outer": outer, "arrow": arrow, "label": label, "day": day})
+		_rows.append({"button": button, "box": box, "outer": outer, "arrow": arrow, "label": label, "day": day, "arrow_base_x": base_arrow_x})
+
+
+func _process(delta: float) -> void:
+	_arrow_bob_time += delta
+	var bob_x := sin(_arrow_bob_time * ARROW_BOB_SPEED) * ARROW_BOB_AMPLITUDE
+	for r in _rows:
+		var arrow := r["arrow"] as TextureRect
+		if arrow.visible:
+			arrow.position.x = r["arrow_base_x"] - r["button"].position.x + bob_x
 
 
 func _build_start_button() -> void:
-	var size := TEX_START.get_size() * PANEL_SCALE
+	var button_size := TEX_START.get_size() * PANEL_SCALE
 
 	_selected_label = Label.new()
 	_selected_label.position = Vector2(875, 528)
-	_selected_label.size = Vector2(size.x, 32)
+	_selected_label.size = Vector2(button_size.x, 32)
 	_selected_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_selected_label.add_theme_color_override("font_color", Color.WHITE)
 	_selected_label.add_theme_constant_override("outline_size", 6)
@@ -144,8 +180,8 @@ func _build_start_button() -> void:
 	_start_button = TextureButton.new()
 	_start_button.ignore_texture_size = true
 	_start_button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
-	_start_button.custom_minimum_size = size
-	_start_button.size = size
+	_start_button.custom_minimum_size = button_size
+	_start_button.size = button_size
 	_start_button.position = Vector2(875, 568)
 	_start_button.texture_normal = TEX_START
 	_start_button.visible = false
@@ -163,7 +199,9 @@ func _show_week(week: int) -> void:
 	for r in _rows:
 		var day: int = r["day"]
 		var status := SaveManager.get_day_status(week, day)
-		(r["box"] as TextureRect).modulate = _color_for_status(status)
+		var color := _color_for_status(status)
+		(r["box"] as TextureRect).modulate = color
+		(r["outer"] as TextureRect).modulate = color
 		(r["label"] as Label).text = _label_for(week, day, status)
 		(r["outer"] as TextureRect).visible = false
 		(r["arrow"] as TextureRect).visible = false

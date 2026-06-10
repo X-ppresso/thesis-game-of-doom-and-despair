@@ -158,6 +158,7 @@ animations = [{
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1772308201]
 modulate = Color(1, 1, 1, 0.33333334)
+z_index = -1
 position = Vector2(0, 4)
 texture = ExtResource("1_vdgpj")
 

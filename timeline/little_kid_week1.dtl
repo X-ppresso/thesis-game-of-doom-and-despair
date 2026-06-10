@@ -1,10 +1,10 @@
 [style name="bwuh"]
 MC (neutral): There we are, all set and ready for customers.
-MC (neutral_closed): Now I can relax a little...
+MC (happy): Now I can relax a little...
 [style name="no_portrait"]
 ...[pause=0.3][b]The doorbell jingles.[/b]
 [style name="bwuh"]
-MC (smile): Oh, that was quick.
+MC (neutral): Oh, that was quick.
 MC (neutral): Welcome, how can I... Huh?
 MC (neutral): (I could've sworn I heard the door open, but I don't see anyon-)
 [style name="no_portrait"]
@@ -16,7 +16,7 @@ I'm down here.
 [style name="bwuh"]
 MC (neutral_closed): ...... oh.
 MC (neutral): (It's just a kid...)
-MC (sad): Goodness, I didn't see you at all! I'm sooo sorry.
+MC (frown): Goodness, I didn't see you at all! I'm sooo sorry.
 MC (neutral): How can I help you?
 LK (sad): My laptop.. It's broken..
 MC (neutral): Hmmm, let me see...

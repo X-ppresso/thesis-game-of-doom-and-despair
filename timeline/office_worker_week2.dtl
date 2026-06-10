@@ -16,11 +16,12 @@ label diagnose_intro
 	OW (frown): Lately... whenever I try to get some work done on my laptop, I keep finding myself swamped by these notifications and ads.
 	OW (sad): It has gotten so bad that I can't get anything done nowadays. That's when I overheard my co-workers talking about this place.
 	MC (smile): Well, you're at the right place. I can get rid of those for you.
-	OW (neutral): You have my utmost gratitude.
-- Let me think for a moment.
-	MC (neutral): (Let me hear him out first.)
+- How did it get to this?
+	MC (neutral): (Let's hear him out first.)
 	jump diagnose_intro
-MC (neutral): Do you remember doing anything before this started? Like installing something?
+OW (neutral): You have my utmost gratitude.
+- How did it get to this?
+	MC (neutral): Do you remember doing anything before this started? Like installing something?
 OW (neutral): Hmm, let's see... there was a program that I had to install for work.
 OW (neutral): After I started using it, I noticed a decrease in my laptop performance.
 OW (frown): But I didn't think much of it, until there was an advertisement for a program that cleans the computer and makes it run faster.

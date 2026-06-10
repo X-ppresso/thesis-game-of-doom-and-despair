@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bbicftktlnxdj" path="res://sprites/main_ui/level selector/level_select_week_num_2_white.png" id="5_w6gr8"]
 [ext_resource type="Texture2D" uid="uid://d3jerc213lc5q" path="res://sprites/main_ui/level selector/level_select_week_num_2_yellow.png" id="6_y2t8e"]
 [ext_resource type="Texture2D" uid="uid://4ic5un2t54sc" path="res://sprites/main_ui/level selector/level_select_close.png" id="8_w6gr8"]
+[ext_resource type="AudioStream" uid="uid://10am_level_bgm_audio" path="res://Audio/Music/06 10am _ Towball's Crossing.mp3" id="9_10am"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w6t31"]
 atlas = ExtResource("1_p5rml")
@@ -426,6 +427,14 @@ scale = Vector2(2, 2)
 [node name="TextureRect" type="TextureRect" parent="bg" unique_id=589369486]
 layout_mode = 2
 texture = ExtResource("2_xsk42")
+
+[node name="LevelSelectBGM" type="AudioStreamPlayer" parent="." unique_id=1957261598]
+stream = ExtResource("9_10am")
+autoplay = true
+loop = true
+bus = "Master"
+pitch_scale = 1.0
+volume_db = 0.0
 
 [node name="Transition" type="AnimationPlayer" parent="." unique_id=222562962]
 libraries/ = SubResource("AnimationLibrary_w6t31")

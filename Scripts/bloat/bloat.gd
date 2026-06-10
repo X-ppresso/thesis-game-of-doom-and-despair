@@ -18,24 +18,76 @@ signal puzzle_complete()
 ## Where the current card is shown (global coords). Set by the device controller.
 @export var card_rect: Rect2 = Rect2(440, 160, 400, 320)
 
-## App icons, dealt from a shuffled deck so the spread stays even.
-const ICONS: Array[Texture2D] = [
-	preload("res://sprites/main_ui/gameplay/minigame assets/icon_1.png"),
-	preload("res://sprites/main_ui/gameplay/minigame assets/icon_2.png"),
-	preload("res://sprites/main_ui/gameplay/minigame assets/icon_3.png"),
-	preload("res://sprites/main_ui/gameplay/minigame assets/icon_4.png"),
-	preload("res://sprites/main_ui/gameplay/minigame assets/icon_5.png"),
-	preload("res://sprites/main_ui/gameplay/minigame assets/icon_6.png"),
-	preload("res://sprites/main_ui/gameplay/minigame assets/icon_7.png"),
-	preload("res://sprites/main_ui/gameplay/minigame assets/icon_8.png"),
-	preload("res://sprites/main_ui/gameplay/minigame assets/icon_9.png"),
-	preload("res://sprites/main_ui/gameplay/minigame assets/icon_10.png"),
-	preload("res://sprites/main_ui/gameplay/minigame assets/icon_11.png"),
-	preload("res://sprites/main_ui/gameplay/minigame assets/icon_12.png"),
-	preload("res://sprites/main_ui/gameplay/minigame assets/icon_13.png"),
+## App icons, each with its own pool of legit and bloat/adware names.
+const ICON_PRESETS := [
+	{
+		"texture": preload("res://sprites/main_ui/gameplay/minigame assets/icon_1.png"),
+		"good_names": ["Files", "My Files"],
+		"bad_names": [],
+	},
+	{
+		"texture": preload("res://sprites/main_ui/gameplay/minigame assets/icon_2.png"),
+		"good_names": ["Dating app", "Binder"],
+		"bad_names": [],
+	},
+	{
+		"texture": preload("res://sprites/main_ui/gameplay/minigame assets/icon_3.png"),
+		"good_names": ["Hollow Night", "Fighting the Sun!"],
+		"bad_names": [],
+	},
+	{
+		"texture": preload("res://sprites/main_ui/gameplay/minigame assets/icon_4.png"),
+		"good_names": ["Music", "Music Player", "Tunes"],
+		"bad_names": [],
+	},
+	{
+		"texture": preload("res://sprites/main_ui/gameplay/minigame assets/icon_5.png"),
+		"good_names": ["Documents", "Files", "Sheets"],
+		"bad_names": ["NotVirus.apk"],
+	},
+	{
+		"texture": preload("res://sprites/main_ui/gameplay/minigame assets/icon_6.png"),
+		"good_names": ["Photos", "Gallery", "Pictures"],
+		"bad_names": [],
+	},
+	{
+		"texture": preload("res://sprites/main_ui/gameplay/minigame assets/icon_7.png"),
+		"good_names": [],
+		"bad_names": ["MegaClean Pro", "Battery Saver X", "RAM Cleaner+"],
+	},
+	{
+		"texture": preload("res://sprites/main_ui/gameplay/minigame assets/icon_8.png"),
+		"good_names": ["Contacts", "Chat", "Messages", "Forums"],
+		"bad_names": [],
+	},
+	{
+		"texture": preload("res://sprites/main_ui/gameplay/minigame assets/icon_9.png"),
+		"good_names": [],
+		"bad_names": ["Unlucky Patcher", "Coupon Genie", "Super Fixer"],
+	},
+	{
+		"texture": preload("res://sprites/main_ui/gameplay/minigame assets/icon_10.png"),
+		"good_names": [],
+		"bad_names": ["Bouncy Friend", "Blooneys TD 10", "Gorilla Pal"],
+	},
+	{
+		"texture": preload("res://sprites/main_ui/gameplay/minigame assets/icon_11.png"),
+		"good_names": ["Mail", "Messages"],
+		"bad_names": [],
+	},
+	{
+		"texture": preload("res://sprites/main_ui/gameplay/minigame assets/icon_12.png"),
+		"good_names": ["Games", "Game launcher", "Amogus"],
+		"bad_names": [],
+	},
+	{
+		"texture": preload("res://sprites/main_ui/gameplay/minigame assets/icon_13.png"),
+		"good_names": ["Contacts", "Call", "Phone", "Whatsupp"],
+		"bad_names": [],
+	},
 ]
 
-## Legit apps the player should KEEP.
+## Optional fallback names when an icon has no category-specific pool.
 const GOOD_APPS := [
 	"Photos", "Messages", "Calendar", "Notes", "Camera", "Maps",
 	"Music", "Bank", "Clock", "Browser", "Contacts", "Gallery",
@@ -57,7 +109,8 @@ var _deck: Array = []          # each: {name, is_bad, icon}
 var _index: int = 0
 var _busy: bool = false
 var _card_base_pos: Vector2
-var _icon_deck: Array[Texture2D] = []
+var _good_icon_deck: Array = []
+var _bad_icon_deck: Array = []
 
 
 func _ready() -> void:
@@ -71,20 +124,39 @@ func _ready() -> void:
 func _build_deck() -> void:
 	var bad := clampi(bad_items, 0, total_items)
 	var good := total_items - bad
-	var goods := GOOD_APPS.duplicate(); goods.shuffle()
-	var bads := BAD_APPS.duplicate(); bads.shuffle()
 	for i in good:
-		_deck.append({"name": goods[i % goods.size()], "is_bad": false, "icon": _next_icon()})
+		var card := _next_icon(false)
+		_deck.append({"name": card.name, "is_bad": false, "icon": card.texture})
 	for i in bad:
-		_deck.append({"name": bads[i % bads.size()], "is_bad": true, "icon": _next_icon()})
+		var card := _next_icon(true)
+		_deck.append({"name": card.name, "is_bad": true, "icon": card.texture})
 	_deck.shuffle()
 
 
-func _next_icon() -> Texture2D:
-	if _icon_deck.is_empty():
-		_icon_deck = ICONS.duplicate()
-		_icon_deck.shuffle()
-	return _icon_deck.pop_back()
+func _next_icon(is_bad: bool) -> Dictionary:
+	var deck: Array = _good_icon_deck if not is_bad else _bad_icon_deck
+	if deck.is_empty():
+		deck = []
+		for preset in ICON_PRESETS:
+			if is_bad and preset.get("bad_names", []).size() > 0:
+				deck.append(preset)
+			elif not is_bad and preset.get("good_names", []).size() > 0:
+				deck.append(preset)
+		deck.shuffle()
+		if is_bad:
+			_bad_icon_deck = deck
+		else:
+			_good_icon_deck = deck
+	var icon_data: Dictionary = deck.pop_back() as Dictionary
+	var names: Array
+	if is_bad:
+		names = icon_data.get("bad_names", []) as Array
+	else:
+		names = icon_data.get("good_names", []) as Array
+	if names.is_empty():
+		names = BAD_APPS if is_bad else GOOD_APPS
+	var name: String = names[randi() % names.size()] as String
+	return {"texture": icon_data.get("texture"), "name": name}
 
 
 func _layout_card() -> void:

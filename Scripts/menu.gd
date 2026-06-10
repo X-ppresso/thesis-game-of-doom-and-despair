@@ -4,6 +4,9 @@ extends Control
 @onready var door: AnimatedSprite2D = $background
 @onready var continue_button: TextureButton = $MarginContainer/HBoxContainer/Continue
 
+const DOOR_SFX: AudioStream = preload("res://Audio/store_door.wav")
+var _door_sfx: AudioStreamPlayer
+
 var is_playing := false        # guards the fade-out -> change-scene step
 var _target_scene := ""        # scene to load once the fade finishes
 var _confirm_new_game: ConfirmationDialog
@@ -11,7 +14,19 @@ var _confirm_new_game: ConfirmationDialog
 
 func _ready() -> void:
 	transition.play("fade_in")
+	_setup_sfx()
 	_refresh_continue_button()
+
+func _setup_sfx() -> void:
+	_door_sfx = AudioStreamPlayer.new()
+	_door_sfx.stream = DOOR_SFX
+	_door_sfx.bus = "Master"
+	_door_sfx.volume_db = 0.0
+	add_child(_door_sfx)
+
+func _play_door_sfx() -> void:
+	if _door_sfx != null and _door_sfx.stream != null:
+		_door_sfx.play()
 
 
 # Continue is only usable once a save exists; otherwise it is greyed out.
@@ -68,6 +83,7 @@ func _go_to(scene_path: String, use_door: bool) -> void:
 	is_playing = true
 	_target_scene = scene_path
 	if use_door:
+		_play_door_sfx()
 		door.play("open")          # plays the shop door opening animation first
 	else:
 		transition.play("fade_out")

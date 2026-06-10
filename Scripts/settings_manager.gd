@@ -6,7 +6,7 @@ extends Node
 
 const PATH := "user://settings.cfg"
 
-var master_volume: float = 1.0   # linear, 0..1
+var master_volume: float = 0.4   # linear, 0..1
 var fullscreen: bool = false
 
 

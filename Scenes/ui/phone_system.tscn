@@ -1,27 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://cphonesys0a"]
+[gd_scene format=3 uid="uid://cphonesys0a"]
 
-[ext_resource type="Script" path="res://Scripts/device_system.gd" id="0_script"]
+[ext_resource type="Script" uid="uid://botgsj0vjp8vg" path="res://Scripts/device_system.gd" id="0_script"]
 [ext_resource type="Texture2D" uid="uid://cyc8m1gx5m4p4" path="res://sprites/main_ui/gameplay/devices/phone.png" id="1_phone"]
 [ext_resource type="Texture2D" uid="uid://b6b3vnt6mnp1o" path="res://sprites/main_ui/gameplay/devices/phone_system.png" id="2_sys"]
 [ext_resource type="Texture2D" uid="uid://bi70oop8ncloj" path="res://sprites/main_ui/gameplay/minigame assets/system_button.png" id="3_btn"]
 [ext_resource type="Texture2D" uid="uid://byndt1qdcmuy5" path="res://sprites/main_ui/gameplay/minigame assets/system_button_pressed.png" id="4_btnp"]
 
-[node name="PhoneSystem" type="Node2D"]
+[node name="PhoneSystem" type="Node2D" unique_id=611005963]
 script = ExtResource("0_script")
 pane_fract = Rect2(0.08, 0.17, 0.84, 0.58)
-vertical = false
+button_center_fract = Vector2(0.3, 0.8)
 
-[node name="Frame" type="Node2D" parent="."]
+[node name="Frame" type="Node2D" parent="." unique_id=2052901717]
 position = Vector2(482, 155)
 scale = Vector2(1.8, 1.8)
 
-[node name="phone" type="TextureRect" parent="Frame"]
+[node name="phone" type="TextureRect" parent="Frame" unique_id=678965806]
 offset_right = 88.0
 offset_bottom = 157.0
 scale = Vector2(2, 2)
 texture = ExtResource("1_phone")
 
-[node name="Systembg" type="TextureRect" parent="Frame"]
+[node name="Systembg" type="TextureRect" parent="Frame" unique_id=211904337]
 offset_left = 12.0
 offset_top = 14.0
 offset_right = 86.0
@@ -29,7 +29,7 @@ offset_bottom = 156.0
 scale = Vector2(2, 2)
 texture = ExtResource("2_sys")
 
-[node name="system_button" type="TextureButton" parent="Frame"]
+[node name="system_button" type="TextureButton" parent="Frame" unique_id=1285079238]
 offset_right = 68.0
 offset_bottom = 15.0
 texture_normal = ExtResource("3_btn")

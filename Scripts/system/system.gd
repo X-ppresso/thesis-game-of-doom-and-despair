@@ -96,27 +96,27 @@ func _build_lanes() -> void:
 		track.position = _pos((along_min + along_max) * 0.5, cross)
 		if vertical:
 			track.rotation = PI * 0.5
-		track.scale = Vector2(length / TEX_BAR.get_width(), track_thick / TEX_BAR.get_height())
+		track.scale = Vector2(4.0, 4.0)
 		lanes_container.add_child(track)
 
 		var tval := randf_range(along_min + length * 0.18, along_max - length * 0.18)
 		var target := Sprite2D.new()
 		if vertical:
 			target.texture = TEX_TARGET_V
-			target.scale = Vector2(track_thick / TEX_TARGET_V.get_width(), target_len / TEX_TARGET_V.get_height())
+			target.scale = Vector2(4.0, 4.0)
 		else:
 			target.texture = TEX_TARGET_H
-			target.scale = Vector2(target_len / TEX_TARGET_H.get_width(), track_thick / TEX_TARGET_H.get_height())
+			target.scale = Vector2(4.0, 4.0)
 		target.position = _pos(tval, cross)
 		lanes_container.add_child(target)
 
 		var needle := Sprite2D.new()
 		if vertical:
 			needle.texture = TEX_NEEDLE_V
-			needle.scale = Vector2(needle_cross / TEX_NEEDLE_V.get_width(), NEEDLE_THICK / TEX_NEEDLE_V.get_height())
+			needle.scale = Vector2(4.0, 4.0)
 		else:
 			needle.texture = TEX_NEEDLE_H
-			needle.scale = Vector2(NEEDLE_THICK / TEX_NEEDLE_H.get_width(), needle_cross / TEX_NEEDLE_H.get_height())
+			needle.scale = Vector2(4.0, 4.0)
 		needle.position = _pos(along_min, cross)
 		lanes_container.add_child(needle)
 

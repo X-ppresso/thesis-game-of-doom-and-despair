@@ -1,8 +1,15 @@
 [style name="bwuh"]
-MC (neutral): So, what seems to be the problem?
-Random1: {Global.fc_problem}
-MC (neutral): {Global.fc_cause_q}
-Random1: {Global.fc_cause}
+Random1: Hello, I need help with my device.
+- What's the problem?
+	MC (neutral): So, what seems to be the problem?
+	Random1: {Global.fc_problem}
+- How did it happen?
+	MC: (I've got to ask what the problem actually is, first.)
+	jump 
+MC: I see...
+- How did it happen?
+	MC (neutral): {Global.fc_cause_q}
+	Random1: {Global.fc_cause}
 label diagnose_choice
 MC (neutral_closed): (Based on what they said, the problem must be...)
 - Malware

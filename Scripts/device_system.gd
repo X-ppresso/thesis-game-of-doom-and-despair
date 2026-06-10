@@ -86,12 +86,8 @@ func _place_button() -> void:
 	var tex := button.texture_normal
 	if tex == null:
 		return
-	var fscale: float = frame.get_global_transform().get_scale().x
-	if fscale == 0.0:
-		fscale = 1.0
-	var s := (sr.size.x * button_width_fract) / (tex.get_width() * fscale)
-	button.scale = Vector2(s, s)
-	var rendered := tex.get_size() * s * fscale   # actual on-screen size
+	button.scale = Vector2(2.0, 2.0)
+	var rendered := tex.get_size() * 2.0   # actual on-screen size
 	var center := sr.position + Vector2(button_center_fract.x * sr.size.x, button_center_fract.y * sr.size.y)
 	button.global_position = center - rendered * 0.5
 

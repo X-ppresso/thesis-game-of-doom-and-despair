@@ -131,8 +131,8 @@ const DAY_CONFIG := {
 				"chars": ["hg1", "hg2"],
 				"special": {"diag": "highschooler_week2", "post": "highschooler_week2_post"},
 				"difficulty": [
-					{"total_lanes": 4, "hit_window": 0.11, "miss_penalty": 12, "marker_speed": 1.1},
-					{"total_objects": 10, "bad_objects": 4, "good_click_penalty": 6, "scan_duration": 1.2, "scan_cooldown": 4.5},
+					{"total_lanes": 6, "hit_window": 0.11, "miss_penalty": 12, "marker_speed": 1.1},
+					{"total_objects": 15, "bad_objects": 6, "good_click_penalty": 6, "scan_duration": 1.2, "scan_cooldown": 8},
 				],
 			},
 		],
@@ -174,8 +174,8 @@ const DAY_CONFIG := {
 				"chars": ["lk"],
 				"special": {"diag": "little_kid_week2", "post": "little_kid_week2_post"},
 				"difficulty": {
-					"total_objects": 12, "bad_objects": 4, "good_click_penalty": 6,
-					"scan_duration": 1.2, "scan_cooldown": 4.0,
+					"total_objects": 17, "bad_objects": 7, "good_click_penalty": 6,
+					"scan_duration": 1.2, "scan_cooldown": 10.0,
 				},
 			},
 			{"npc": "Random", "problems": ["system"], "device": "phone", "fc": {
@@ -250,7 +250,7 @@ const DAY_CONFIG := {
 				"special": {"diag": "office_worker_week2", "post": "office_worker_week2_post"},
 				"difficulty": [
 					{"total_items": 14, "bad_items": 6, "wrong_penalty": 10},
-					{"total_lanes": 5, "hit_window": 0.11, "miss_penalty": 12, "marker_speed": 1.1},
+					{"total_lanes": 8, "hit_window": 0.11, "miss_penalty": 12, "marker_speed": 1.1},
 				],
 			},
 		],

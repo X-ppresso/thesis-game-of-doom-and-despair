@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="1_60hom"]
 [ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_al53v"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="3_s5dha"]
+[ext_resource type="PackedScene" path="res://dialogic customs/InputCatcher/custom_input_catcher.tscn" id="4_1cknc"]
 [ext_resource type="PackedScene" uid="uid://e5vttkf4hktt" path="res://dialogic customs/bwuh/TextboxWithPortrait/custom_textbox_with_portrait_.tscn" id="5_1cknc"]
-[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="5_f04gp"]
 [ext_resource type="PackedScene" uid="uid://cuij8w330plyc" path="res://dialogic customs/CenteredChoices/custom_centered_choices.tscn" id="8_60hom"]
 [ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_t6nq4"]
 
@@ -21,7 +21,7 @@ scene = ExtResource("3_s5dha")
 
 [sub_resource type="Resource" id="Resource_ntelk"]
 script = ExtResource("2_al53v")
-scene = ExtResource("5_f04gp")
+scene = ExtResource("4_1cknc")
 
 [sub_resource type="Resource" id="Resource_textbox"]
 script = ExtResource("2_al53v")
@@ -73,4 +73,4 @@ layer_info = {
 "13": SubResource("Resource_textbox"),
 "15": SubResource("Resource_6hkbc")
 }
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "12"

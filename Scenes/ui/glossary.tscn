@@ -1,0 +1,561 @@
+[gd_scene format=3 uid="uid://d1n551fcto1uy"]
+
+[ext_resource type="Texture2D" uid="uid://dmr0qm77w2k1m" path="res://sprites/main_ui/glossary/background.png" id="1_cslhw"]
+[ext_resource type="Script" uid="uid://b0glo45nhtnqg" path="res://Scripts/glossary.gd" id="1_lkji8"]
+[ext_resource type="FontFile" uid="uid://bdcbm1mvge6ac" path="res://fonts/m5x7.ttf" id="2_k0a60"]
+[ext_resource type="Texture2D" uid="uid://brc7brlx52irg" path="res://sprites/main_ui/choice.png" id="4_gfy31"]
+[ext_resource type="Shader" uid="uid://dqtiacvfognvf" path="res://Shaders/reveal.gdshader" id="4_te82j"]
+[ext_resource type="PackedScene" uid="uid://coinjd5byry8i" path="res://Scenes/Characters/mc.tscn" id="5_j84cn"]
+[ext_resource type="Texture2D" uid="uid://defn8k7n7lflh" path="res://sprites/main_ui/gameplay/minigame assets/icon_9.png" id="5_p0pql"]
+[ext_resource type="PackedScene" uid="uid://s2e1lryxdn4h" path="res://Scenes/Characters/hg1.tscn" id="6_7t65q"]
+[ext_resource type="Texture2D" uid="uid://c30ihbhwfxhne" path="res://sprites/main_ui/gameplay/minigame assets/magnify_small.png" id="6_p0pql"]
+[ext_resource type="Texture2D" uid="uid://d2w41mcq5osda" path="res://sprites/main_ui/gameplay/devices/laptop_malware.png" id="7_s1cbf"]
+[ext_resource type="Texture2D" uid="uid://brkv5voyywco" path="res://sprites/main_ui/gameplay/minigame assets/icon_3.png" id="8_hqgmh"]
+[ext_resource type="PackedScene" uid="uid://cx4mn1wf2v1ci" path="res://Scenes/Characters/hg2.tscn" id="8_xrfoq"]
+[ext_resource type="PackedScene" uid="uid://xrh7jp88vyfq" path="res://Scenes/Characters/lk.tscn" id="9_fpyjk"]
+[ext_resource type="Texture2D" uid="uid://b1ompd2f7brhb" path="res://sprites/main_ui/gameplay/minigame assets/icon_5.png" id="9_l8nyv"]
+[ext_resource type="PackedScene" uid="uid://cguyt2e0lj3p7" path="res://Scenes/Characters/ow.tscn" id="10_evnu7"]
+[ext_resource type="Texture2D" uid="uid://b1v2d2a0vo6be" path="res://sprites/main_ui/gameplay/minigame assets/icon_7.png" id="10_y6p5d"]
+[ext_resource type="Texture2D" uid="uid://ck7wv67knthmu" path="res://sprites/main_ui/gameplay/devices/phone_bloatware.png" id="11_ei0xq"]
+[ext_resource type="Texture2D" uid="uid://bb2lxpix2sfi1" path="res://sprites/main_ui/gameplay/minigame assets/button_keep.png" id="12_7wob7"]
+[ext_resource type="Texture2D" uid="uid://baqpf0yhv7k5" path="res://sprites/main_ui/gameplay/minigame assets/button_trash.png" id="13_7t4xb"]
+[ext_resource type="Texture2D" uid="uid://cngx1o1fgcu28" path="res://sprites/main_ui/gameplay/minigame assets/icon_10.png" id="14_mq73l"]
+[ext_resource type="FontFile" uid="uid://bu6he3wqe45q3" path="res://fonts/m3x6.ttf" id="15_wg2l6"]
+[ext_resource type="Texture2D" uid="uid://whs7i7i53a4n" path="res://sprites/main_ui/gameplay/devices/laptop_system.png" id="16_wg2l6"]
+[ext_resource type="Texture2D" uid="uid://bi70oop8ncloj" path="res://sprites/main_ui/gameplay/minigame assets/system_button.png" id="17_p4ax6"]
+[ext_resource type="Texture2D" uid="uid://c3bdudpq8b8k4" path="res://sprites/main_ui/gameplay/minigame assets/system_bar_timer_verticalpng.png" id="18_1yrle"]
+[ext_resource type="Texture2D" uid="uid://80hvdfcnmyei" path="res://sprites/main_ui/gameplay/minigame assets/system_bar_timer_vertical.png" id="19_3v7pn"]
+[ext_resource type="Texture2D" uid="uid://bk0wrq0u66fqs" path="res://sprites/main_ui/gameplay/minigame assets/hitline_horizontal.png" id="20_p4ax6"]
+[ext_resource type="Texture2D" uid="uid://dtps176bhoava" path="res://sprites/main_ui/gameplay/minigame assets/hitline.png" id="21_1yrle"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0a60"]
+content_margin_bottom = 2.0
+bg_color = Color(0.14439687, 0.09221939, 0.026215304, 0.40784314)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkji8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_right = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b7kjy"]
+shader = ExtResource("4_te82j")
+shader_parameter/glitch_amount = 0.1
+
+[node name="Glossary" type="Node2D" unique_id=555404830]
+scale = Vector2(2, 2)
+script = ExtResource("1_lkji8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=696515904]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_cslhw")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2117016274]
+offset_left = 10.0
+offset_top = 36.0
+offset_right = 95.0
+offset_bottom = 280.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1955718755]
+layout_mode = 2
+
+[node name="How to play" type="Button" parent="MarginContainer/VBoxContainer" unique_id=360762285]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/font = ExtResource("2_k0a60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k0a60")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lkji8")
+text = "How to play"
+
+[node name="Diagnosis" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1200961256]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/font = ExtResource("2_k0a60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k0a60")
+text = "Diagnosis"
+
+[node name="Malware" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2074290252]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/font = ExtResource("2_k0a60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k0a60")
+text = "Malware"
+
+[node name="Bloatware" type="Button" parent="MarginContainer/VBoxContainer" unique_id=287257069]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/font = ExtResource("2_k0a60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k0a60")
+text = "Bloatware"
+
+[node name="System Failure" type="Button" parent="MarginContainer/VBoxContainer" unique_id=231808545]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/font = ExtResource("2_k0a60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k0a60")
+text = "System Failure"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=329261024]
+offset_left = 113.0
+offset_top = 36.0
+offset_right = 393.0
+offset_bottom = 291.0
+
+[node name="default" type="RichTextLabel" parent="MarginContainer2" unique_id=518415135]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/normal_font = ExtResource("2_k0a60")
+text = "Press a category to learn more about it."
+
+[node name="How to play" type="RichTextLabel" parent="MarginContainer2" unique_id=1450359925]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/normal_font = ExtResource("2_k0a60")
+bbcode_enabled = true
+text = "Help the customers by listening to their descriptions carefully and figure out what their problem is!
+
+
+
+
+
+Possible problems include Malware, Bloatware, and System Failure.
+
+Once you guess correctly, you will play a minigame corresponding to the type of problem.
+
+Beware! Mistakes will reduce your payment at the end of the day, and  if you mess up enough, the customer will leave."
+
+[node name="Choice" type="Sprite2D" parent="MarginContainer2/How to play" unique_id=2133317397]
+position = Vector2(190.5, 64)
+scale = Vector2(0.71875, 0.71875)
+texture = ExtResource("4_gfy31")
+
+[node name="Choice2" type="Sprite2D" parent="MarginContainer2/How to play" unique_id=2140053924]
+position = Vector2(165, 45.5)
+scale = Vector2(0.73437494, 0.71875)
+texture = ExtResource("4_gfy31")
+flip_h = true
+
+[node name="MC" parent="MarginContainer2/How to play" unique_id=539553132 instance=ExtResource("5_j84cn")]
+position = Vector2(229, 84.5)
+
+[node name="HG1" parent="MarginContainer2/How to play" unique_id=534125666 instance=ExtResource("6_7t65q")]
+position = Vector2(124, 83)
+
+[node name="Label2" type="Label" parent="MarginContainer2/How to play" unique_id=60950360]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 55.0
+offset_right = 227.14285
+offset_bottom = 78.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_wg2l6")
+text = "Bogos binted?"
+
+[node name="Label" type="Label" parent="MarginContainer2/How to play" unique_id=2004695062]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 36.5
+offset_right = 247.0
+offset_bottom = 59.5
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_wg2l6")
+text = "Did you get the photos printed?"
+
+[node name="HG2" parent="MarginContainer2/How to play" unique_id=192214553 instance=ExtResource("8_xrfoq")]
+position = Vector2(99, 83)
+
+[node name="MC2" parent="MarginContainer2/How to play" unique_id=1282188939 instance=ExtResource("9_fpyjk")]
+position = Vector2(78.5, 83)
+
+[node name="MC3" parent="MarginContainer2/How to play" unique_id=869369202 instance=ExtResource("10_evnu7")]
+position = Vector2(57.5, 83.5)
+
+[node name="Diagnosis" type="RichTextLabel" parent="MarginContainer2" unique_id=1403026550]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/normal_font = ExtResource("2_k0a60")
+bbcode_enabled = true
+text = "Ask the customer questions and deduct whether the problem is Malware, Bloatware, or System Failure.
+
+Each problem has the following characteristics:
+
+Malware: Usually will use substantial power and cause overheating or crashes. Downloaded and initiated by an user who are being deceived or clueless.
+
+Bloatware: Sluggish performance or storage specific issues. Will usually have a clear indicator for those who know where to look.
+
+System Failure: Crashes and poor perfomance, Caused by system modifications or bad updates."
+
+[node name="Malware" type="RichTextLabel" parent="MarginContainer2" unique_id=955521290]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/normal_font = ExtResource("2_k0a60")
+text = "Minigame - Malware
+
+Find and remove all the malware to clear the minigame! Click the icon directly to remove a file.
+
+How to find Malware:
+Malware files has jittery movements.
+
+
+
+
+
+
+
+You can use the Magnifier (    this thing) to immediately \"reveal\" all the malware temporarily if you're struggling.
+
+Revealed malware looks like this ->"
+
+[node name="a" type="TextureRect" parent="MarginContainer2/Malware" unique_id=177559689]
+material = SubResource("ShaderMaterial_b7kjy")
+layout_mode = 0
+offset_left = 189.5
+offset_top = 224.5
+offset_right = 221.5
+offset_bottom = 256.5
+texture = ExtResource("5_p0pql")
+
+[node name="b" type="TextureRect" parent="MarginContainer2/Malware" unique_id=1974277037]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 182.5
+offset_right = 175.0
+offset_bottom = 208.5
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_p0pql")
+
+[node name="c" type="TextureRect" parent="MarginContainer2/Malware" unique_id=432003282]
+layout_mode = 0
+offset_left = 4.5
+offset_top = 96.0
+offset_right = 218.5
+offset_bottom = 228.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_s1cbf")
+
+[node name="b2" type="TextureRect" parent="MarginContainer2/Malware" unique_id=704915938]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 132.0
+offset_right = 34.0
+offset_bottom = 158.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_p0pql")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/Malware" unique_id=1607461826]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 126.5
+offset_right = 81.0
+offset_bottom = 166.5
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_hqgmh")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer2/Malware" unique_id=1456612223]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 139.5
+offset_right = 111.0
+offset_bottom = 179.5
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_l8nyv")
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer2/Malware" unique_id=1336190173]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 121.5
+offset_right = 136.0
+offset_bottom = 161.5
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_y6p5d")
+
+[node name="Bloatware" type="RichTextLabel" parent="MarginContainer2" unique_id=1484343699]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/normal_font = ExtResource("2_k0a60")
+bbcode_enabled = true
+text = "Minigame - Bloatware"
+
+[node name="a" type="TextureRect" parent="MarginContainer2/Bloatware" unique_id=1215901149]
+layout_mode = 0
+offset_top = 20.5
+offset_right = 74.0
+offset_bottom = 162.5
+texture = ExtResource("11_ei0xq")
+
+[node name="b" type="TextureRect" parent="MarginContainer2/Bloatware" unique_id=1641358612]
+layout_mode = 0
+offset_left = 45.499996
+offset_top = 110.5
+offset_right = 85.5
+offset_bottom = 150.5
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_7wob7")
+
+[node name="b2" type="TextureRect" parent="MarginContainer2/Bloatware" unique_id=1632357361]
+layout_mode = 0
+offset_left = 1.000004
+offset_top = 110.5
+offset_right = 41.000004
+offset_bottom = 150.5
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("13_7t4xb")
+
+[node name="c" type="TextureRect" parent="MarginContainer2/Bloatware" unique_id=860909258]
+layout_mode = 0
+offset_left = 23.499994
+offset_top = 30.0
+offset_right = 63.499992
+offset_bottom = 70.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("14_mq73l")
+
+[node name="Label" type="Label" parent="MarginContainer2/Bloatware" unique_id=748956391]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 59.5
+offset_right = 89.0
+offset_bottom = 88.5
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("15_wg2l6")
+text = "Your name is bonzi...
+And you're a buddy..."
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer2/Bloatware" unique_id=669113308]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 21.0
+offset_right = 284.0
+offset_bottom = 162.5
+theme_override_colors/default_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/normal_font = ExtResource("2_k0a60")
+text = "Go through a pile of files and apps and determine whether you should keep or discard the item.
+
+It's easy to tell the bad ones apart from the good ones from the icon alone for the most part. 
+
+Make sure to also read the names, there may be red herrings."
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer2/Bloatware" unique_id=478004513]
+layout_mode = 0
+offset_left = 0.99999994
+offset_top = 168.5
+offset_right = 203.0
+offset_bottom = 188.5
+scale = Vector2(0.7, 0.7)
+theme_override_colors/default_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/normal_font = ExtResource("2_k0a60")
+text = "hey, isn't this just tind- shhhhhhh"
+
+[node name="System Failure" type="RichTextLabel" parent="MarginContainer2" unique_id=928826903]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/normal_font = ExtResource("2_k0a60")
+bbcode_enabled = true
+text = "Minigame - System Failure
+
+Reminds me of a certain attack mechanic in a certain game...."
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/System Failure" unique_id=199251407]
+layout_mode = 0
+offset_top = 61.0
+offset_right = 214.0
+offset_bottom = 193.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("16_wg2l6")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer2/System Failure" unique_id=447179440]
+layout_mode = 0
+offset_left = 57.999996
+offset_top = 145.0
+offset_right = 126.0
+offset_bottom = 160.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("17_p4ax6")
+
+[node name="bar" type="TextureRect" parent="MarginContainer2/System Failure" unique_id=395913020]
+layout_mode = 0
+offset_left = 56.5
+offset_top = 83.0
+offset_right = 67.5
+offset_bottom = 151.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_1yrle")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/System Failure/bar" unique_id=186284518]
+layout_mode = 0
+offset_left = 4.9999995
+offset_top = 9.374999
+offset_right = 5.9999995
+offset_bottom = 17.375
+texture = ExtResource("19_3v7pn")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer2/System Failure/bar" unique_id=192605736]
+layout_mode = 0
+offset_left = 1.25
+offset_top = 12.499999
+offset_right = 10.25
+offset_bottom = 14.499999
+texture = ExtResource("20_p4ax6")
+
+[node name="bar2" type="TextureRect" parent="MarginContainer2/System Failure" unique_id=1506574009]
+layout_mode = 0
+offset_left = 68.5
+offset_top = 83.0
+offset_right = 79.5
+offset_bottom = 151.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_1yrle")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/System Failure/bar2" unique_id=879044550]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 33.75
+offset_right = 6.0
+offset_bottom = 41.75
+texture = ExtResource("19_3v7pn")
+
+[node name="bar3" type="TextureRect" parent="MarginContainer2/System Failure" unique_id=1927735349]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 83.0
+offset_right = 92.0
+offset_bottom = 151.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_1yrle")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/System Failure/bar3" unique_id=1557848550]
+layout_mode = 0
+offset_left = 4.9999995
+offset_top = 9.374999
+offset_right = 5.9999995
+offset_bottom = 17.375
+texture = ExtResource("19_3v7pn")
+
+[node name="bar4" type="TextureRect" parent="MarginContainer2/System Failure" unique_id=9761652]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 83.0
+offset_right = 104.0
+offset_bottom = 151.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_1yrle")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/System Failure/bar4" unique_id=732566543]
+layout_mode = 0
+offset_left = 4.9999995
+offset_top = 48.124996
+offset_right = 5.9999995
+offset_bottom = 56.124996
+texture = ExtResource("19_3v7pn")
+
+[node name="bar5" type="TextureRect" parent="MarginContainer2/System Failure" unique_id=1813833815]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 83.0
+offset_right = 116.0
+offset_bottom = 151.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("18_1yrle")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/System Failure/bar5" unique_id=659059686]
+layout_mode = 0
+offset_left = 4.9999995
+offset_top = 28.124996
+offset_right = 5.9999995
+offset_bottom = 36.124996
+texture = ExtResource("19_3v7pn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer2/System Failure" unique_id=1824832036]
+layout_mode = 0
+offset_top = 176.0
+offset_right = 238.5
+offset_bottom = 250.5
+theme_override_colors/default_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/normal_font = ExtResource("2_k0a60")
+text = "Press the                 (Or press SPACE)
+
+When the    (or    )
+
+Overlaps with the     (or  )"
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer2/System Failure" unique_id=69786099]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 177.0
+offset_right = 127.0
+offset_bottom = 192.0
+texture = ExtResource("17_p4ax6")
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer2/System Failure" unique_id=988618323]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 204.5
+offset_right = 58.0
+offset_bottom = 216.0
+texture = ExtResource("21_1yrle")
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer2/System Failure" unique_id=1584788386]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 209.0
+offset_right = 100.0
+offset_bottom = 220.5
+rotation = 1.5707964
+texture = ExtResource("21_1yrle")
+
+[node name="TextureRect6" type="TextureRect" parent="MarginContainer2/System Failure" unique_id=1662467712]
+layout_mode = 0
+offset_left = 110.5
+offset_top = 235.0
+offset_right = 112.5
+offset_bottom = 246.5
+rotation = 1.5707964
+texture = ExtResource("19_3v7pn")
+
+[node name="TextureRect7" type="TextureRect" parent="MarginContainer2/System Failure" unique_id=834031682]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 230.0
+offset_right = 138.0
+offset_bottom = 241.5
+texture = ExtResource("19_3v7pn")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer2/System Failure" unique_id=314083149]
+layout_mode = 0
+offset_left = 138.99998
+offset_top = 188.5
+offset_right = 334.9286
+offset_bottom = 205.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/default_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/normal_font = ExtResource("2_k0a60")
+text = "[Better most of the time honestly]"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="MarginContainer2/System Failure" unique_id=322639708]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 59.0
+offset_right = 280.16666
+offset_bottom = 195.66667
+scale = Vector2(0.8, 0.8)
+theme_override_colors/default_color = Color(1, 0.76862746, 0.5568628, 1)
+theme_override_fonts/normal_font = ExtResource("2_k0a60")
+text = "What does this minigame have to do with actual data recover?
+
+Great question.
+"

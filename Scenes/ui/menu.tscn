@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dexvy13mnbyxd" path="res://sprites/main_ui/settings-hover.png" id="11_krmfv"]
 [ext_resource type="Texture2D" uid="uid://cmb0fwltq1vko" path="res://sprites/main_ui/exit-invert.png" id="13_0erwc"]
 [ext_resource type="Texture2D" uid="uid://dk2m1r7qistmn" path="res://sprites/main_ui/exit-hover.png" id="14_mdjrv"]
+[ext_resource type="AudioStream" uid="uid://b4q0w5oo18j4l" path="res://Audio/Music/02 6am _ Towballs Crossing.mp3" id="15_bgm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6revv"]
 atlas = ExtResource("2_itu7i")
@@ -162,6 +163,10 @@ position = Vector2(640, 360)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_w1aet")
 animation = &"open"
+
+[node name="MenuBGM" type="AudioStreamPlayer" parent="." unique_id=2147483647]
+stream = ExtResource("15_bgm")
+autoplay = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1579537399]
 layout_mode = 0

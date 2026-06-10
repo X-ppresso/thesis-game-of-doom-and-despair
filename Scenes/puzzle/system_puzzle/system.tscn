@@ -1,9 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://csyspuzzle01a"]
+[gd_scene format=3 uid="uid://csyspu00le01a"]
 
-[ext_resource type="Script" path="res://Scripts/system/system.gd" id="1_sys"]
+[ext_resource type="Script" uid="uid://dtbtlhe1bgqyj" path="res://Scripts/system/system.gd" id="1_sys"]
 
-[node name="System" type="Node2D"]
+[node name="System" type="Node2D" unique_id=2097249489]
 script = ExtResource("1_sys")
-total_lanes = 5
 
-[node name="Lanes" type="Node2D" parent="."]
+[node name="Lanes" type="Node2D" parent="." unique_id=1541087945]

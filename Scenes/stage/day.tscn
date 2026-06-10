@@ -1,21 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdayrunner00a"]
+[gd_scene format=3 uid="uid://cdayrunner00a"]
 
 [ext_resource type="Texture2D" uid="uid://yfdfnjxwtulo" path="res://sprites/main_ui/gameplay/background.png" id="1_bg"]
-[ext_resource type="Script" path="res://Scenes/stage/day.gd" id="2_script"]
+[ext_resource type="Script" uid="uid://ca413ssya8f78" path="res://Scenes/stage/day.gd" id="2_script"]
 [ext_resource type="PackedScene" uid="uid://coinjd5byry8i" path="res://Scenes/Characters/mc.tscn" id="3_mc"]
 [ext_resource type="Texture2D" uid="uid://mwqin0m07cmo" path="res://sprites/main_ui/gameplay/counter.png" id="4_counter"]
+[ext_resource type="PackedScene" uid="uid://d1n551fcto1uy" path="res://Scenes/ui/glossary.tscn" id="5_42cgx"]
+[ext_resource type="Texture2D" uid="uid://cixt2dpkwle7u" path="res://sprites/main_ui/glossary/guidebook_ex.png" id="6_guidebook_ex"]
 
-[node name="Day" type="Node2D"]
+[node name="Day" type="Node2D" unique_id=38601314]
 script = ExtResource("2_script")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2125035074]
+z_index = -1
 offset_left = 1.0
 offset_right = 641.0
 offset_bottom = 360.0
 scale = Vector2(2, 2)
 texture = ExtResource("1_bg")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=105381861]
 offset_left = 989.0
 offset_top = 168.0
 offset_right = 1044.0
@@ -23,8 +26,23 @@ offset_bottom = 296.0
 scale = Vector2(4, 4)
 texture = ExtResource("4_counter")
 
-[node name="MC" parent="." instance=ExtResource("3_mc")]
+[node name="MC" parent="." unique_id=1326545573 instance=ExtResource("3_mc")]
 position = Vector2(1142, 408)
 scale = Vector2(5, 5)
 
-[node name="Characters" type="Node2D" parent="."]
+[node name="Characters" type="Node2D" parent="." unique_id=244108030]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1380896798]
+layer = 5
+
+[node name="Guide" type="TextureButton" parent="CanvasLayer" unique_id=705244857]
+offset_left = 1100.0
+offset_top = 616.0
+offset_right = 1140.0
+offset_bottom = 656.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("6_guidebook_ex")
+
+[node name="Glossary" parent="CanvasLayer" unique_id=555404830 instance=ExtResource("5_42cgx")]
+visible = false
+position = Vector2(251, 65)

@@ -1,21 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://claptopsys0a"]
+[gd_scene format=3 uid="uid://claptopsys0a"]
 
-[ext_resource type="Script" path="res://Scripts/device_system.gd" id="0_script"]
+[ext_resource type="Script" uid="uid://botgsj0vjp8vg" path="res://Scripts/device_system.gd" id="0_script"]
 [ext_resource type="Texture2D" uid="uid://3ehrgywgnco1" path="res://sprites/main_ui/gameplay/devices/laptop.png" id="1_lap"]
 [ext_resource type="Texture2D" uid="uid://whs7i7i53a4n" path="res://sprites/main_ui/gameplay/devices/laptop_system.png" id="2_sys"]
 [ext_resource type="Texture2D" uid="uid://bi70oop8ncloj" path="res://sprites/main_ui/gameplay/minigame assets/system_button.png" id="3_btn"]
 [ext_resource type="Texture2D" uid="uid://byndt1qdcmuy5" path="res://sprites/main_ui/gameplay/minigame assets/system_button_pressed.png" id="4_btnp"]
 
-[node name="LaptopSystem" type="Node2D"]
+[node name="LaptopSystem" type="Node2D" unique_id=592237353]
+z_index = 1
 script = ExtResource("0_script")
-pane_fract = Rect2(0.1, 0.24, 0.8, 0.52)
+pane_fract = Rect2(0.3, 0.24, 0.4, 0.52)
 vertical = true
+button_center_fract = Vector2(0.43, 0.85)
 
-[node name="Frame" type="Node2D" parent="."]
+[node name="Frame" type="Node2D" parent="." unique_id=384843272]
 position = Vector2(150, 36)
 scale = Vector2(1.8, 1.8)
 
-[node name="laptop" type="TextureRect" parent="Frame"]
+[node name="laptop" type="TextureRect" parent="Frame" unique_id=702331796]
 offset_left = -27.0
 offset_top = 36.0
 offset_right = 235.0
@@ -23,7 +25,7 @@ offset_bottom = 208.0
 scale = Vector2(2, 2)
 texture = ExtResource("1_lap")
 
-[node name="Systembg" type="TextureRect" parent="Frame"]
+[node name="Systembg" type="TextureRect" parent="Frame" unique_id=1272456010]
 offset_left = 21.0
 offset_top = 46.0
 offset_right = 235.0
@@ -31,7 +33,7 @@ offset_bottom = 178.0
 scale = Vector2(2, 2)
 texture = ExtResource("2_sys")
 
-[node name="system_button" type="TextureButton" parent="Frame"]
+[node name="system_button" type="TextureButton" parent="Frame" unique_id=494015984]
 offset_right = 68.0
 offset_bottom = 15.0
 texture_normal = ExtResource("3_btn")

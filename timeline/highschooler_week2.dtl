@@ -3,11 +3,11 @@ MC (neutral): ......
 MC (neutral): (What a nice day...)
 MC (neutral): (Not to mention my reputation has gone up and people are starting to come here more often.)
 MC (neutral_closed): I think I can afford to relax a little bit after all that hard work.. *yawn*
-MC (eepy): ....zz
+MC (neutral_closed): ....zz
 [style name="no_portrait"]
 Ah! W-wait! I can't keep up!
 [style name="bwuh"]
-MC (eepy): (...?)
+MC (neutral): (...?)
 [style name="no_portrait"]
 Come on! The place is right there!
 [style name="bwuh"]
@@ -16,31 +16,33 @@ MC (neutral_closed): (I sense a feeling of deja vu...)
 ...[pause=0.3][b]The door opens loudly.[/b]
 [style name="bwuh"]
 HG (smile_neutral): Hiya! I'm back! And I brought my friend!
-HG2 (closed): h-hello...
+HG2 (neutral): h-hello...
 MC (neutral_closed): And there she is.
 HG (neutral): She's the friend from last time! When she found out about the phone, she immediately turned it off and now she's too scared to turn it on again...
-HG2 (sad): She's right.... I heard you m-managed to fix her phone.. Can you please fix mine too?
+HG2 (neutral): She's right.... I heard you m-managed to fix her phone.. Can you please fix mine too?
 MC (smile): No problem!
-MC (neutral): So, your phone probably had the same problem your friend got, since she got it from you.
-HG2 (sad): You're right... I panicked and turned my phone off.
-HG2 (sad): b-but I didn't realize it would spread to her until it was too late...
-HG (neutral_closed): You wouldn't believe how many times she apologized to me.
-HG2 (sad): I'm sorry...
-HG (frown): Ah! You did it again!
-HG2 (closed): ah! .....
-MC (neutral): Anyway, this shouldn't be too hard to handle. It won't take long.
-[style name="no_portrait"]
-[i]tries to turn on the phone[/i][pause=0.5] .....[pause=0.5] !!!
-[style name="bwuh"]
-HG2 (sad): huh...? W-what's happening?
-HG (shock): woah! Your phone is going even crazier than mine did when I brought it here.
+- About the problem.
+	MC (neutral): So, your phone probably had the same problem your friend got, since she got it from you.
+	HG2 (sad): You're right... I panicked and turned my phone off.
+	HG2 (sad): b-but I didn't realize it would spread to her until it was too late...
+	HG (neutral_closed): You wouldn't believe how many times she apologized to me.
+	HG2 (sad): I'm sorry...
+	HG (frown): Ah! You did it again!
+	HG2 (closed): ah! .....
+	MC (neutral): Anyway, this shouldn't be too hard to handle. It won't take long.
+	[style name="no_portrait"]
+	[i]tries to turn on the phone[/i][pause=0.5] .....[pause=0.5] !!!
+	[style name="bwuh"]
+	HG2 (sad): huh...? W-what's happening?
+	HG (shock): woah! Your phone is going even crazier than mine did when I brought it here.
 MC (frown): hmm... we might have more than one problem.
-MC (neutral): Do you remember doing anything before turning off the phone?
-HG2 (sad): uhm... I was panicking really badly when it happened, so I tried tapping around the phone to make it stop...
-HG2 (sad): I might have accidentally pressed a setting or two...
-MC (neutral_closed): I see, that might just explain what's happening.
+- How did this happen?
+	MC (neutral): Do you remember doing anything before turning off the phone?
+	HG2 (sad): uhm... I was panicking really badly when it happened, so I tried tapping around the phone to make it stop...
+	HG2 (sad): I might have accidentally pressed a setting or two...
+	MC (neutral_closed): I see, that might just explain what's happening.
 label diagnose_choice
-MC: (The problem here has to be...)
+MC: (The new problem here has to be...)
 - System Failure
 	jump diagnose_correct
 - Malware

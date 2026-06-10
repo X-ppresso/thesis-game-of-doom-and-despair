@@ -32,7 +32,7 @@ const CHAR_SCENES := {
 const CHAR_TO_DCH := {"hg1": "HG", "hg2": "HG2", "lk": "LK", "ow": "OW"}
 # Where staged chibis come to rest (left of the MC at the counter). One vs two.
 const CHAR_POS_SOLO := [Vector2(950, 408)]
-const CHAR_POS_PAIR := [Vector2(866, 408), Vector2(1018, 408)]
+const CHAR_POS_PAIR := [Vector2(920, 408), Vector2(836, 408)]
 const CHAR_SCALE := Vector2(5, 5)
 const CHIBI_ENTER_X := -140.0   # off-screen left, where a client starts before walking in
 const WALKIN_TIME := 1.0
@@ -41,9 +41,17 @@ const BOB_PX := 2.5             # talk-bob height in the sprite's local space (x
 const WALKIN_DIAG := "walkin_diagnose"
 const WALKIN_POST := "walkin_post"
 
+const DAY_MUSIC_PATHS := [
+	"res://Audio/Music/03 7am _ Towballs Crossing.mp3",
+	"res://Audio/Music/13 5pm _ Towball's Crossing.mp3",
+]
+
 @onready var chars_container: Node2D = $Characters
 @onready var mc_chibi: Node2D = $MC
+@onready var guide_button: TextureButton = $CanvasLayer/Guide
+@onready var glossary: Node = $CanvasLayer/Glossary
 
+var _music_player: AudioStreamPlayer = AudioStreamPlayer.new()
 var _week := 1
 var _day := 1
 var _clients: Array = []
@@ -53,6 +61,7 @@ var _pi := 0                 # current puzzle index
 var _post_timeline := ""
 var _current_puzzle: Node = null
 var _finished := false
+var _guide_clicked := false  # tracks if guide button has been clicked
 
 # Per-client chibi bookkeeping (rebuilt each client; MC persists).
 var _chibis := {}            # dch name -> chibi root Node2D
@@ -67,10 +76,12 @@ func _ready() -> void:
 	_week = cur.x
 	_day = cur.y
 	_clients = SaveManager.get_day_clients(_week, _day)
+	_play_day_music()
 	Global.reset_day()
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.Text.about_to_show_text.connect(_on_about_to_show_text)
 	Global.day_failed.connect(_on_day_failed)
+	guide_button.pressed.connect(_on_guide_button_pressed)
 	# The MC is always on the counter, facing the door (toward the client).
 	_register_chibi("MC", mc_chibi)
 	_face(mc_chibi, "idle_left")
@@ -78,6 +89,21 @@ func _ready() -> void:
 		_finish_day(false)
 		return
 	_start_client()
+
+func _play_day_music() -> void:
+	if DAY_MUSIC_PATHS.size() == 0:
+		return
+	var rng := RandomNumberGenerator.new()
+	rng.randomize()
+	var index := rng.randi_range(0, DAY_MUSIC_PATHS.size() - 1)
+	var path: String = DAY_MUSIC_PATHS[index]
+	var stream := load(path)
+	if stream is AudioStream:
+		_music_player.stream = stream
+		_music_player.bus = "Master"
+		_music_player.volume_db = 0.0
+		add_child(_music_player)
+		_music_player.play()
 
 
 # ------------------------------------------------------------------ per client
@@ -93,7 +119,7 @@ func _start_client() -> void:
 	var c: Dictionary = _clients[_ci]
 	_puzzles = SaveManager.client_puzzle_scenes(c)
 	_pi = 0
-	if SaveManager.is_special(c):
+	if SaveManager.get_script().is_special(c):
 		_spawn_chars(c.get("chars", []))
 		var sp: Dictionary = c.get("special", {})
 		_post_timeline = str(sp.get("post", ""))
@@ -253,6 +279,17 @@ func _on_day_failed() -> void:
 		_current_puzzle.queue_free()
 		_current_puzzle = null
 	_finish_day(false)
+
+
+func _on_guide_button_pressed() -> void:
+	# Toggle glossary visibility
+	glossary.visible = not glossary.visible
+	# Change texture to regular guidebook on first click
+	if not _guide_clicked:
+		_guide_clicked = true
+		var guidebook_tex := load("res://sprites/main_ui/glossary/guidebook.png") as Texture2D
+		if guidebook_tex != null:
+			guide_button.texture_normal = guidebook_tex
 
 
 func _finish_day(cleared: bool) -> void:
