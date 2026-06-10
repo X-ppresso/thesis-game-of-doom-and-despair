@@ -1,2 +1,5 @@
 # Will I cook or will I get cooked
-## 2 months ish left and the game is NOT even started fuuuuuuuuuuuuuuuuuuuuuuu
+## Update: I cooked
+
+Read more and play the game here:
+https://x-ppresso.itch.io/troubleshooter
